@@ -1,0 +1,141 @@
+
+    <!-- Page hero -->
+    <section class="page-hero">
+        <div class="container">
+            <nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Home</a></li><li class="breadcrumb-item active" aria-current="page">Contact</li></ol></nav>
+            <h1 class="wow fadeInUp" data-wow-delay=".1s">Talk to RehoSpace</h1>
+            <p class="lead mt-3 wow fadeInUp" data-wow-delay=".2s">Book a free demo, request a quotation or ask a question. We reply fastest on WhatsApp.</p>
+        </div>
+        {{MOUNTAINS}}
+    </section>
+
+    <!-- Contact cards -->
+    <section class="section pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".1s">
+                    <div class="contact-card">
+                        <div class="ico"><i class="fab fa-whatsapp"></i></div>
+                        <div><h5>WhatsApp</h5><a href="https://wa.me/255745814072" target="_blank" rel="noopener">+255 745 814 072</a><p class="text-small text-muted">Fastest way to reach us</p></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="contact-card">
+                        <div class="ico"><i class="fas fa-phone"></i></div>
+                        <div><h5>Call Us</h5><a href="tel:+255742177328">+255 742 177 328</a><br><a href="tel:+255745814072">+255 745 814 072</a></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="contact-card">
+                        <div class="ico"><i class="fas fa-envelope"></i></div>
+                        <div><h5>Email</h5><a href="mailto:info@rehospace.com">info@rehospace.com</a><p class="text-small text-muted">For quotations and partnerships</p></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="contact-card">
+                        <div class="ico"><i class="fas fa-location-dot"></i></div>
+                        <div><h5>Visit Us</h5><p>Kihonda Mizani, behind Pesame Park,<br>Morogoro, Tanzania</p><p class="text-small text-muted">Mon – Sat, 8:00 AM – 6:00 PM</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form + map -->
+    <section class="section pt-4">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-7 wow fadeInLeft" data-wow-delay=".2s">
+                    <div class="contact-form">
+                        <span class="section-eyebrow">Send Us a Message</span>
+                        <h3 class="mb-2">Tell us what you need</h3>
+                        <p class="text-small text-muted mb-4">Fill in the form and send it straight to our WhatsApp or email. No account needed.</p>
+                        <form id="contactForm" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="cName" class="form-label">Your name</label>
+                                    <input type="text" class="form-control" id="cName" placeholder="e.g. Amina Juma" required>
+                                    <div class="invalid-feedback">Please enter your name.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cPhone" class="form-label">Phone / WhatsApp</label>
+                                    <input type="tel" class="form-control" id="cPhone" placeholder="e.g. 0745 000 000" required>
+                                    <div class="invalid-feedback">Please enter a phone number we can reach you on.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cBusiness" class="form-label">Type of business</label>
+                                    <select class="form-select" id="cBusiness">
+                                        <option value="">Select one</option>
+                                        <option>Pharmacy / Clinic</option>
+                                        <option>Shop / Retail</option>
+                                        <option>Daycare / School</option>
+                                        <option>Real Estate</option>
+                                        <option>Hotel / Hospitality</option>
+                                        <option>Church / NGO</option>
+                                        <option>Construction / Engineering</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cInterest" class="form-label">I am interested in</label>
+                                    <select class="form-select" id="cInterest">
+                                        <option value="">Select one</option>
+                                        <option>PillPointOne (Pharmacy System)</option>
+                                        <option>DaycareMIS (Daycare System)</option>
+                                        <option>RehoPOS (Retail POS)</option>
+                                        <option>SkyPush (Bulk SMS)</option>
+                                        <option>RehoCare (early access)</option>
+                                        <option>Real Estate Platform</option>
+                                        <option>Custom software / system</option>
+                                        <option>Website / digital marketing</option>
+                                        <option>Networking / Wi-Fi / CCTV</option>
+                                        <option>Something else</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="cMessage" class="form-label">Message</label>
+                                    <textarea class="form-control" id="cMessage" rows="5" placeholder="Describe your business and the problem you want to solve..." required></textarea>
+                                    <div class="invalid-feedback">Please tell us a little about what you need.</div>
+                                </div>
+                                <div class="col-12 d-flex gap-2 flex-wrap mt-4">
+                                    <button type="button" id="sendWhatsApp" class="btn btn-whatsapp"><i class="fab fa-whatsapp me-2"></i>Send via WhatsApp</button>
+                                    <button type="button" id="sendEmail" class="btn btn-outline-brand"><i class="fas fa-envelope me-2"></i>Send via Email</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5 wow fadeInRight" data-wow-delay=".3s">
+                    <div class="map-frame mb-4">
+                        <iframe src="https://www.google.com/maps?q=Kihonda%20Mizani%2C%20Morogoro%2C%20Tanzania&z=14&output=embed" title="RehoSpace Enterprise location in Morogoro" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                    </div>
+                    <div class="value-card h-auto">
+                        <i class="fas fa-calendar-check"></i>
+                        <h5>What happens next</h5>
+                        <ul class="check-list mt-2 mb-0 text-small">
+                            <li>We reply within one working day, usually much sooner.</li>
+                            <li>For products, we schedule a free demo on your phone or computer.</li>
+                            <li>For projects, we discuss requirements and send a clear quotation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social strip -->
+    <section class="pb-5 mb-4">
+        <div class="container">
+            <div class="cta-band text-center wow fadeInUp" data-wow-delay=".2s">
+                <h2 class="mb-3">Follow @rehospace</h2>
+                <p class="lead mb-4">Daily tips, product demos and short videos for Tanzanian business owners.</p>
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+                    <a href="https://www.facebook.com/rehospace" target="_blank" rel="noopener" class="btn btn-white"><i class="fab fa-facebook-f me-2"></i>Facebook</a>
+                    <a href="https://www.instagram.com/rehospace" target="_blank" rel="noopener" class="btn btn-white"><i class="fab fa-instagram me-2"></i>Instagram</a>
+                    <a href="https://www.tiktok.com/@rehospace" target="_blank" rel="noopener" class="btn btn-white"><i class="fab fa-tiktok me-2"></i>TikTok</a>
+                    <a href="https://www.youtube.com/@rehospace" target="_blank" rel="noopener" class="btn btn-white"><i class="fab fa-youtube me-2"></i>YouTube</a>
+                    <a href="https://www.linkedin.com/company/rehospace" target="_blank" rel="noopener" class="btn btn-white"><i class="fab fa-linkedin-in me-2"></i>LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>

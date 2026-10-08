@@ -1,0 +1,5 @@
+<svg class="hero-mountains" viewBox="0 0 1440 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0 180 L0 120 L140 70 L220 110 L360 20 L470 95 L560 55 L700 130 L830 30 L930 95 L1040 60 L1180 140 L1280 90 L1440 150 L1440 180 Z" fill="rgba(255,255,255,0.07)"/>
+    <path d="M0 180 L0 150 L120 115 L250 140 L400 85 L520 125 L640 100 L780 150 L900 110 L1020 135 L1160 105 L1300 145 L1440 120 L1440 180 Z" fill="rgba(255,255,255,0.10)"/>
+    <path d="M0 180 L0 170 L1440 160 L1440 180 Z" fill="#ffffff"/>
+</svg>
