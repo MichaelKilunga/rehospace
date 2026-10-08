@@ -22,7 +22,7 @@
                     <div class="quote-box mt-4">"Technology should do more than digitise existing processes. It should create room: for businesses to operate efficiently, for teams to focus on meaningful work, and for people and organisations to grow."</div>
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay=".3s">
-                    <img src="img/brand-cover.jpg" class="img-fluid brand-cover mb-4" alt="RehoSpace — Open space, room to flourish">
+                    <img src="{{BASE}}img/brand-cover.webp" width="1200" height="486" loading="lazy" class="img-fluid brand-cover mb-4" alt="RehoSpace — Open space, room to flourish">
                     <ul class="timeline">
                         <li><strong>Blueprint</strong>A simple vision written on paper: build scalable digital products, develop builders, and create long-term economic and social impact.</li>
                         <li><strong>PillPointOne goes live</strong>Our first product is deployed in pharmacies and begins generating recurring subscriptions.</li>
@@ -144,3 +144,10 @@
             </div>
         </div>
     </section>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[
+      {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rehospace.com/"},{"@type":"ListItem","position":2,"name":"About","item":"https://rehospace.com/about"}]},
+      {"@type":"AboutPage","@id":"https://rehospace.com/about#page","url":"https://rehospace.com/about","name":"About RehoSpace Enterprise","inLanguage":"en","about":{"@id":"https://rehospace.com/#organization"}}
+    ]}
+    </script>

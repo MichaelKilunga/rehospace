@@ -1,0 +1,148 @@
+
+    <!-- Page hero -->
+    <section class="page-hero">
+        <div class="container">
+            <nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Nyumbani</a></li><li class="breadcrumb-item active" aria-current="page">Wasiliana Nasi</li></ol></nav>
+            <h1 class="wow fadeInUp" data-wow-delay=".1s">Zungumza na RehoSpace</h1>
+            <p class="lead mt-3 wow fadeInUp" data-wow-delay=".2s">Omba demo ya bure, omba nukuu ya bei au uliza swali. Tunajibu haraka zaidi kupitia WhatsApp.</p>
+        </div>
+        {{MOUNTAINS}}
+    </section>
+
+    <!-- Contact cards -->
+    <section class="section pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".1s">
+                    <div class="contact-card">
+                        <div class="ico"><i class="fab fa-whatsapp"></i></div>
+                        <div><h5>WhatsApp</h5><a href="https://wa.me/255745814072" target="_blank" rel="noopener">+255 745 814 072</a><p class="text-small text-muted">Njia ya haraka zaidi kutufikia</p></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="contact-card">
+                        <div class="ico"><i class="fas fa-phone"></i></div>
+                        <div><h5>Tupigie</h5><a href="tel:+255742177328">+255 742 177 328</a><br><a href="tel:+255745814072">+255 745 814 072</a></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="contact-card">
+                        <div class="ico"><i class="fas fa-envelope"></i></div>
+                        <div><h5>Barua Pepe</h5><a href="mailto:info@rehospace.com">info@rehospace.com</a><p class="text-small text-muted">Kwa nukuu za bei na ushirikiano</p></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="contact-card">
+                        <div class="ico"><i class="fas fa-location-dot"></i></div>
+                        <div><h5>Tutembelee</h5><p>Kihonda Mizani, nyuma ya Pesame Park,<br>Morogoro, Tanzania</p><p class="text-small text-muted">Jumatatu – Jumamosi, 8:00 asubuhi – 6:00 jioni</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form + map -->
+    <section class="section pt-4">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-7 wow fadeInLeft" data-wow-delay=".2s">
+                    <div class="contact-form">
+                        <span class="section-eyebrow">Tutumie Ujumbe</span>
+                        <h3 class="mb-2">Tueleze unachohitaji</h3>
+                        <p class="text-small text-muted mb-4">Jaza fomu na uitume moja kwa moja kwenye WhatsApp au barua pepe yetu. Hakuna akaunti inayohitajika.</p>
+                        <form id="contactForm" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="cName" class="form-label">Jina lako</label>
+                                    <input type="text" class="form-control" id="cName" placeholder="mf. Amina Juma" required>
+                                    <div class="invalid-feedback">Tafadhali andika jina lako.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cPhone" class="form-label">Simu / WhatsApp</label>
+                                    <input type="tel" class="form-control" id="cPhone" placeholder="mf. 0745 000 000" required>
+                                    <div class="invalid-feedback">Tafadhali andika namba ya simu tunayoweza kukupata.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cBusiness" class="form-label">Aina ya biashara</label>
+                                    <select class="form-select" id="cBusiness">
+                                        <option value="">Chagua moja</option>
+                                        <option>Duka la Dawa / Zahanati</option>
+                                        <option>Duka / Rejareja</option>
+                                        <option>Daycare / Shule</option>
+                                        <option>Majengo na Viwanja</option>
+                                        <option>Hoteli / Ukarimu</option>
+                                        <option>Kanisa / NGO</option>
+                                        <option>Ujenzi / Uhandisi</option>
+                                        <option>Nyingine</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cInterest" class="form-label">Ninavutiwa na</label>
+                                    <select class="form-select" id="cInterest">
+                                        <option value="">Chagua moja</option>
+                                        <option>PillPointOne (Mfumo wa Duka la Dawa)</option>
+                                        <option>DaycareMIS (Mfumo wa Daycare)</option>
+                                        <option>RehoPOS (POS ya Duka)</option>
+                                        <option>SkyPush (SMS kwa Wingi)</option>
+                                        <option>RehoCare (upatikanaji wa awali)</option>
+                                        <option>Jukwaa la Majengo na Viwanja</option>
+                                        <option>Programu / mfumo maalum</option>
+                                        <option>Tovuti / masoko ya kidijitali</option>
+                                        <option>Mitandao / Wi-Fi / CCTV</option>
+                                        <option>Kitu kingine</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="cMessage" class="form-label">Ujumbe</label>
+                                    <textarea class="form-control" id="cMessage" rows="5" placeholder="Eleza biashara yako na tatizo unalotaka kutatua..." required></textarea>
+                                    <div class="invalid-feedback">Tafadhali tueleze kidogo unachohitaji.</div>
+                                </div>
+                                <div class="col-12 d-flex gap-2 flex-wrap mt-4">
+                                    <button type="button" id="sendWhatsApp" class="btn btn-whatsapp"><i class="fab fa-whatsapp me-2"></i>Tuma kwa WhatsApp</button>
+                                    <button type="button" id="sendEmail" class="btn btn-outline-brand"><i class="fas fa-envelope me-2"></i>Tuma kwa Barua Pepe</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5 wow fadeInRight" data-wow-delay=".3s">
+                    <div class="map-frame mb-4">
+                        <iframe src="https://www.google.com/maps?q=Kihonda%20Mizani%2C%20Morogoro%2C%20Tanzania&z=14&output=embed&hl=sw" title="Mahali RehoSpace Enterprise ilipo Morogoro" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                    </div>
+                    <div class="value-card h-auto">
+                        <i class="fas fa-calendar-check"></i>
+                        <h5>Kinachofuata</h5>
+                        <ul class="check-list mt-2 mb-0 text-small">
+                            <li>Tunajibu ndani ya siku moja ya kazi, mara nyingi haraka zaidi.</li>
+                            <li>Kwa bidhaa, tunapanga demo ya bure kwenye simu au kompyuta yako.</li>
+                            <li>Kwa miradi, tunajadili mahitaji na kutuma nukuu ya bei iliyo wazi.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social strip -->
+    <section class="pb-5 mb-4">
+        <div class="container">
+            <div class="cta-band text-center wow fadeInUp" data-wow-delay=".2s">
+                <h2 class="mb-3">Fuata @rehospace</h2>
+                <p class="lead mb-4">Vidokezo vya kila siku, demo za bidhaa na video fupi kwa wafanyabiashara wa Tanzania.</p>
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+                    <a href="https://www.facebook.com/rehospace" target="_blank" rel="noopener" class="btn btn-white"><i class="fab fa-facebook-f me-2"></i>Facebook</a>
+                    <a href="https://www.instagram.com/rehospace" target="_blank" rel="noopener" class="btn btn-white"><i class="fab fa-instagram me-2"></i>Instagram</a>
+                    <a href="https://www.tiktok.com/@rehospace" target="_blank" rel="noopener" class="btn btn-white"><i class="fab fa-tiktok me-2"></i>TikTok</a>
+                    <a href="https://www.youtube.com/@rehospace" target="_blank" rel="noopener" class="btn btn-white"><i class="fab fa-youtube me-2"></i>YouTube</a>
+                    <a href="https://www.linkedin.com/company/rehospace" target="_blank" rel="noopener" class="btn btn-white"><i class="fab fa-linkedin-in me-2"></i>LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[
+      {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Nyumbani","item":"https://rehospace.com/sw/"},{"@type":"ListItem","position":2,"name":"Wasiliana Nasi","item":"https://rehospace.com/sw/contact"}]},
+      {"@type":"ContactPage","@id":"https://rehospace.com/sw/contact#page","url":"https://rehospace.com/sw/contact","name":"Wasiliana na RehoSpace Enterprise","inLanguage":"sw","mainEntity":{"@id":"https://rehospace.com/#organization"}}
+    ]}
+    </script>

@@ -83,6 +83,11 @@
         var WA_NUMBER = "255745814072";
         var EMAIL = "info@rehospace.com";
 
+        var sw = (document.documentElement.lang || "en").toLowerCase() === "sw";
+        var L = sw
+            ? { hello: "Habari RehoSpace,", name: "Jina", phone: "Simu", business: "Aina ya biashara", interest: "Ninavutiwa na", subject: "Ujumbe kutoka tovuti: " }
+            : { hello: "Hello RehoSpace,", name: "Name", phone: "Phone", business: "Business type", interest: "Interested in", subject: "Website enquiry from " };
+
         function buildMessage() {
             var name = form.querySelector("#cName").value.trim();
             var phone = form.querySelector("#cPhone").value.trim();
@@ -90,12 +95,12 @@
             var interest = form.querySelector("#cInterest").value;
             var message = form.querySelector("#cMessage").value.trim();
             return [
-                "Hello RehoSpace,",
+                L.hello,
                 "",
-                "Name: " + name,
-                "Phone: " + phone,
-                "Business type: " + (business || "-"),
-                "Interested in: " + (interest || "-"),
+                L.name + ": " + name,
+                L.phone + ": " + phone,
+                L.business + ": " + (business || "-"),
+                L.interest + ": " + (interest || "-"),
                 "",
                 message
             ].join("\n");
@@ -120,7 +125,7 @@
         if (mailBtn) {
             mailBtn.addEventListener("click", function () {
                 if (!validate()) { return; }
-                var subject = "Website enquiry from " + form.querySelector("#cName").value.trim();
+                var subject = L.subject + form.querySelector("#cName").value.trim();
                 window.location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(buildMessage());
             });
         }

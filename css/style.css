@@ -376,3 +376,23 @@ section { position: relative; }
 .navbar-brand .brand-text small { font-family: "Inter", sans-serif; font-weight: 500; font-style: italic; font-size: .62rem; letter-spacing: .2px; color: var(--rs-violet); margin-top: .2rem; }
 .site-footer .footer-logo img { height: 96px; }
 body { overflow-x: hidden; }
+
+/* Language switch pill in the navbar */
+.lang-switch { display: inline-flex; align-items: center; gap: .4rem; font-family: "Poppins", sans-serif; font-weight: 600; font-size: .82rem; color: var(--rs-purple); background: var(--rs-lilac); border: 1px solid var(--rs-lilac-2); border-radius: 999px; padding: .4rem .85rem; white-space: nowrap; }
+.lang-switch:hover { background: var(--rs-purple); border-color: var(--rs-purple); color: #fff; }
+.lang-switch i { font-size: .8rem; }
+
+/* Navbar density: keep labels, phone and buttons on one line between 992px and 1400px */
+.navbar .nav-link { white-space: nowrap; }
+.nav-cta .btn, .nav-phone a, .nav-phone small { white-space: nowrap; }
+@media (min-width: 992px) and (max-width: 1399.98px) {
+    .navbar .nav-link { padding: .75rem .7rem !important; font-size: .95rem; }
+    .navbar-brand .brand-text { font-size: 1.3rem; }
+    .navbar-brand img { height: 38px; }
+    .nav-cta { gap: .5rem; }
+    .lang-switch { padding: .35rem .7rem; font-size: .78rem; }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .navbar-brand .brand-text { display: none; }   /* icon-only brand so long labels fit */
+    .navbar-brand img { height: 44px; }
+}

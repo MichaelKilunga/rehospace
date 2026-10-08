@@ -23,7 +23,7 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
                     <div class="d-flex align-items-center gap-3 mb-3">
-                        <img src="img/products/pillpointone-logo.png" class="product-logo" alt="PillPointOne logo">
+                        <img src="{{BASE}}img/products/pillpointone-logo.webp" class="product-logo" alt="PillPointOne logo">
                         <div><span class="badge-live">Live</span><br><span class="section-eyebrow mb-0">Healthcare &amp; Pharmacy</span></div>
                     </div>
                     <h2 class="section-title">PillPointOne</h2>
@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay=".3s">
-                    <img src="img/products/pillpointone-devices.png" class="img-fluid product-shot" alt="PillPointOne dashboard on desktop, laptop, tablet and phone">
+                    <img src="{{BASE}}img/products/pillpointone-devices.webp" width="1400" height="645" loading="lazy" class="img-fluid product-shot" alt="PillPointOne dashboard on desktop, laptop, tablet and phone">
                 </div>
             </div>
             <div class="row g-3 mt-4">
@@ -57,7 +57,7 @@
             <div class="row g-5 align-items-center flex-lg-row-reverse">
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay=".2s">
                     <div class="d-flex align-items-center gap-3 mb-3">
-                        <img src="img/products/daycaremis-logo.png" class="product-logo" alt="DaycareMIS logo">
+                        <img src="{{BASE}}img/products/daycaremis-logo.webp" class="product-logo" alt="DaycareMIS logo">
                         <div><span class="badge-live">Live</span><br><span class="section-eyebrow mb-0">Education &amp; Childcare</span></div>
                     </div>
                     <h2 class="section-title">DaycareMIS</h2>
@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".3s">
-                    <img src="img/products/daycaremis-poster.png" class="img-fluid product-shot" alt="DaycareMIS dashboard and SMS to parents">
+                    <img src="{{BASE}}img/products/daycaremis-poster.webp" width="1000" height="1000" loading="lazy" class="img-fluid product-shot" alt="DaycareMIS dashboard and SMS to parents">
                 </div>
             </div>
             <div class="row g-3 mt-4">
@@ -91,7 +91,7 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".2s">
                     <div class="d-flex align-items-center gap-3 mb-3">
-                        <img src="img/products/rehopos-logo.png" class="product-logo" alt="RehoPOS logo">
+                        <img src="{{BASE}}img/products/rehopos-logo.webp" class="product-logo" alt="RehoPOS logo">
                         <div><span class="badge-live">Live</span><br><span class="section-eyebrow mb-0">Retail &amp; Business</span></div>
                     </div>
                     <h2 class="section-title">RehoPOS</h2>
@@ -108,7 +108,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay=".3s">
                     <div class="product-placeholder">
-                        <img src="img/products/rehopos-logo.png" alt="RehoPOS" style="width:140px;" class="mb-3">
+                        <img src="{{BASE}}img/products/rehopos-logo.webp" alt="RehoPOS" style="width:140px;" class="mb-3">
                         <h5>Works on the devices you already own</h5>
                         <p class="mb-0">Android phone, iPhone or computer. Pair a Bluetooth thermal printer and you have a complete till.</p>
                     </div>
@@ -241,3 +241,15 @@
             </div>
         </div>
     </section>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[
+      {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://rehospace.com/"},{"@type":"ListItem","position":2,"name":"Products","item":"https://rehospace.com/products"}]},
+      {"@type":"ItemList","name":"RehoSpace software products","itemListElement":[
+        {"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"PillPointOne","applicationCategory":"BusinessApplication","operatingSystem":"Web, Android, iOS","url":"https://pillpointone.com","image":"https://rehospace.com/img/products/pillpointone-logo.png","description":"Cloud pharmacy management system for sales, stock, expiry tracking, debts, reports and multi-branch control.","offers":{"@type":"Offer","price":"10000","priceCurrency":"TZS","url":"https://rehospace.com/products#pillpointone"},"publisher":{"@id":"https://rehospace.com/#organization"}}},
+        {"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"DaycareMIS","applicationCategory":"BusinessApplication","operatingSystem":"Web, Android, iOS","url":"https://daycare.rehospace.com","image":"https://rehospace.com/img/products/daycaremis-logo.png","description":"Daycare and nursery management: child and parent records, attendance, fees, SMS to parents and progress reports.","offers":{"@type":"Offer","price":"10000","priceCurrency":"TZS","url":"https://rehospace.com/products#daycaremis"},"publisher":{"@id":"https://rehospace.com/#organization"}}},
+        {"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"RehoPOS","applicationCategory":"BusinessApplication","operatingSystem":"Web, Android, iOS","url":"https://pos.rehospace.com","image":"https://rehospace.com/img/products/rehopos-logo.png","description":"Cloud point-of-sale and inventory system for shops and service businesses with mobile money and thermal receipt printing.","offers":{"@type":"Offer","price":"10000","priceCurrency":"TZS","url":"https://rehospace.com/products#rehopos"},"publisher":{"@id":"https://rehospace.com/#organization"}}},
+        {"@type":"ListItem","position":4,"item":{"@type":"SoftwareApplication","name":"SkyPush","applicationCategory":"CommunicationApplication","operatingSystem":"Web","url":"https://pushsms.rehospace.com","description":"Bulk SMS platform for businesses, schools, churches and institutions in Tanzania with sender ID, scheduling and API.","offers":{"@type":"Offer","price":"17","priceCurrency":"TZS","url":"https://rehospace.com/products#pushsms"},"publisher":{"@id":"https://rehospace.com/#organization"}}}
+      ]}
+    ]}
+    </script>

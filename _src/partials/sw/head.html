@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESC}}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <meta name="author" content="RehoSpace Enterprise">
+    <meta name="theme-color" content="#3B1D6E">
+    <meta name="geo.region" content="TZ-19">
+    <meta name="geo.placename" content="Morogoro, Tanzania">
+
+    <!-- Canonical + language alternates -->
+    <link rel="canonical" href="{{CANON_URL}}">
+    <link rel="alternate" hreflang="en" href="{{EN_URL}}">
+    <link rel="alternate" hreflang="sw" href="{{SW_URL}}">
+    <link rel="alternate" hreflang="x-default" href="{{EN_URL}}">
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="RehoSpace Enterprise">
+    <meta property="og:locale" content="sw_TZ">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:title" content="{{TITLE}}">
+    <meta property="og:description" content="{{DESC}}">
+    <meta property="og:url" content="{{CANON_URL}}">
+    <meta property="og:image" content="https://rehospace.com/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="486">
+    <meta property="og:image:alt" content="RehoSpace — Enhancing Life Digitally">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{TITLE}}">
+    <meta name="twitter:description" content="{{DESC}}">
+    <meta name="twitter:image" content="https://rehospace.com/img/og-image.jpg">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/jpeg" href="{{BASE}}img/logo-icon.jpg">
+    <link rel="apple-touch-icon" href="{{BASE}}img/logo-icon.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon font -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{BASE}}lib/animate/animate.min.css" rel="stylesheet">
+    <link href="{{BASE}}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{BASE}}css/style.css" rel="stylesheet">
+
+    <!-- Structured data: organisation + website -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[
+      {"@type":"Organization","@id":"https://rehospace.com/#organization","name":"RehoSpace Enterprise","alternateName":"RehoSpace","url":"https://rehospace.com/","logo":{"@type":"ImageObject","url":"https://rehospace.com/img/logo.jpg"},"image":"https://rehospace.com/img/og-image.jpg","slogan":"Enhancing Life Digitally","description":"Kampuni ya teknolojia ya Tanzania inayotengeneza bidhaa za kidijitali na mifumo ya biashara yenye akili: PillPointOne, DaycareMIS, RehoPOS, SkyPush na programu maalum.","email":"info@rehospace.com","telephone":"+255745814072","foundingDate":"2026","founder":{"@type":"Person","name":"Michael Simon Kilunga","jobTitle":"Founder & Software Engineer"},"address":{"@type":"PostalAddress","streetAddress":"Kihonda Mizani, nyuma ya Pesame Park","addressLocality":"Morogoro","addressRegion":"Morogoro","addressCountry":"TZ"},"areaServed":{"@type":"Country","name":"Tanzania"},"contactPoint":[{"@type":"ContactPoint","telephone":"+255745814072","contactType":"sales","availableLanguage":["sw","en"]}],"sameAs":["https://www.facebook.com/rehospace","https://www.instagram.com/rehospace","https://www.tiktok.com/@rehospace","https://www.youtube.com/@rehospace","https://www.linkedin.com/company/rehospace"]},
+      {"@type":"WebSite","@id":"https://rehospace.com/#website","url":"https://rehospace.com/","name":"RehoSpace Enterprise","publisher":{"@id":"https://rehospace.com/#organization"},"inLanguage":["en","sw"]}
+    ]}
+    </script>
+</head>
+
+<body>
+    <!-- Spinner -->
+    <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-brand" role="status"><span class="visually-hidden">Inapakia</span></div>
+    </div>
+
+    <!-- Topbar -->
+    <div class="topbar py-2 d-none d-md-block">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex gap-4">
+                <span><i class="fas fa-location-dot me-2"></i>Kihonda Mizani, Morogoro, Tanzania</span>
+                <a href="mailto:info@rehospace.com"><i class="fas fa-envelope me-2"></i>info@rehospace.com</a>
+                <span class="d-none d-xl-inline"><i class="fas fa-clock me-2"></i>Jumatatu – Jumamosi: 8:00 asubuhi – 6:00 jioni</span>
+            </div>
+            <div class="social">
+                <a href="https://www.facebook.com/rehospace" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/rehospace" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@rehospace" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@rehospace" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/company/rehospace" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg" aria-label="Menyu kuu">
+                <a href="index.html" class="navbar-brand d-flex align-items-center">
+                    <img src="{{BASE}}img/logo-icon.webp" width="96" height="44" alt="Alama ya mlima ya RehoSpace">
+                    <span class="brand-text">RehoSpace<small>Enhancing Life Digitally</small></span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Fungua menyu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <div class="navbar-nav mx-auto">
+                        <a href="index.html" class="nav-item nav-link">Nyumbani</a>
+                        <a href="about.html" class="nav-item nav-link">Kuhusu Sisi</a>
+                        <a href="products.html" class="nav-item nav-link">Bidhaa</a>
+                        <a href="services.html" class="nav-item nav-link">Huduma</a>
+                        <a href="contact.html" class="nav-item nav-link">Wasiliana Nasi</a>
+                    </div>
+                    <div class="nav-cta mt-3 mt-lg-0">
+                        <a href="{{ALT_URL}}" hreflang="en" lang="en" class="lang-switch" title="Read in English"><i class="fas fa-globe"></i>English</a>
+                        <div class="nav-phone d-none d-xxl-block">
+                            <small>Piga au WhatsApp</small>
+                            <a href="tel:+255745814072">+255 745 814 072</a>
+                        </div>
+                        <a href="https://wa.me/255745814072?text=Habari%20RehoSpace%2C%20ningependa%20kupata%20demo%20ya%20bure." target="_blank" rel="noopener" class="btn btn-brand btn-sm"><i class="fab fa-whatsapp me-2"></i>Omba Demo Bure</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>

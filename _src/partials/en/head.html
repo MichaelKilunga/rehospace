@@ -5,23 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{TITLE}}</title>
     <meta name="description" content="{{DESC}}">
-    <meta name="keywords" content="RehoSpace, RehoSpace Enterprise, software company Tanzania, pharmacy management system, POS system Tanzania, daycare management system, business systems Morogoro, custom software Tanzania">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <meta name="author" content="RehoSpace Enterprise">
     <meta name="theme-color" content="#3B1D6E">
-    <link rel="canonical" href="https://rehospace.com/{{CANON}}">
+    <meta name="geo.region" content="TZ-19">
+    <meta name="geo.placename" content="Morogoro, Tanzania">
+
+    <!-- Canonical + language alternates -->
+    <link rel="canonical" href="{{CANON_URL}}">
+    <link rel="alternate" hreflang="en" href="{{EN_URL}}">
+    <link rel="alternate" hreflang="sw" href="{{SW_URL}}">
+    <link rel="alternate" hreflang="x-default" href="{{EN_URL}}">
 
     <!-- Open Graph / social sharing -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="RehoSpace Enterprise">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="sw_TZ">
     <meta property="og:title" content="{{TITLE}}">
     <meta property="og:description" content="{{DESC}}">
-    <meta property="og:url" content="https://rehospace.com/{{CANON}}">
-    <meta property="og:image" content="https://rehospace.com/img/brand-cover.jpg">
+    <meta property="og:url" content="{{CANON_URL}}">
+    <meta property="og:image" content="https://rehospace.com/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="486">
+    <meta property="og:image:alt" content="RehoSpace — Enhancing Life Digitally">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{TITLE}}">
+    <meta name="twitter:description" content="{{DESC}}">
+    <meta name="twitter:image" content="https://rehospace.com/img/og-image.jpg">
 
     <!-- Icons -->
-    <link rel="icon" type="image/jpeg" href="img/logo-icon.jpg">
-    <link rel="apple-touch-icon" href="img/logo-icon.jpg">
+    <link rel="icon" type="image/jpeg" href="{{BASE}}img/logo-icon.jpg">
+    <link rel="apple-touch-icon" href="{{BASE}}img/logo-icon.jpg">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,9 +47,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{BASE}}lib/animate/animate.min.css" rel="stylesheet">
+    <link href="{{BASE}}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{BASE}}css/style.css" rel="stylesheet">
+
+    <!-- Structured data: organisation + website -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[
+      {"@type":"Organization","@id":"https://rehospace.com/#organization","name":"RehoSpace Enterprise","alternateName":"RehoSpace","url":"https://rehospace.com/","logo":{"@type":"ImageObject","url":"https://rehospace.com/img/logo.jpg"},"image":"https://rehospace.com/img/og-image.jpg","slogan":"Enhancing Life Digitally","description":"Tanzanian technology company building digital products and intelligent business systems: PillPointOne pharmacy management, DaycareMIS, RehoPOS, SkyPush bulk SMS and custom software.","email":"info@rehospace.com","telephone":"+255745814072","foundingDate":"2026","founder":{"@type":"Person","name":"Michael Simon Kilunga","jobTitle":"Founder & Software Engineer"},"address":{"@type":"PostalAddress","streetAddress":"Kihonda Mizani, behind Pesame Park","addressLocality":"Morogoro","addressRegion":"Morogoro","addressCountry":"TZ"},"areaServed":{"@type":"Country","name":"Tanzania"},"contactPoint":[{"@type":"ContactPoint","telephone":"+255745814072","contactType":"sales","availableLanguage":["en","sw"]},{"@type":"ContactPoint","telephone":"+255742177328","contactType":"customer support","availableLanguage":["en","sw"]}],"sameAs":["https://www.facebook.com/rehospace","https://www.instagram.com/rehospace","https://www.tiktok.com/@rehospace","https://www.youtube.com/@rehospace","https://www.linkedin.com/company/rehospace"]},
+      {"@type":"WebSite","@id":"https://rehospace.com/#website","url":"https://rehospace.com/","name":"RehoSpace Enterprise","publisher":{"@id":"https://rehospace.com/#organization"},"inLanguage":["en","sw"]}
+    ]}
+    </script>
 </head>
 
 <body>
@@ -49,7 +72,7 @@
             <div class="d-flex gap-4">
                 <span><i class="fas fa-location-dot me-2"></i>Kihonda Mizani, Morogoro, Tanzania</span>
                 <a href="mailto:info@rehospace.com"><i class="fas fa-envelope me-2"></i>info@rehospace.com</a>
-                <span class="d-none d-lg-inline"><i class="fas fa-clock me-2"></i>Mon – Sat: 8:00 AM – 6:00 PM</span>
+                <span class="d-none d-xl-inline"><i class="fas fa-clock me-2"></i>Mon – Sat: 8:00 AM – 6:00 PM</span>
             </div>
             <div class="social">
                 <a href="https://www.facebook.com/rehospace" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -64,9 +87,9 @@
     <!-- Header / Navigation -->
     <header class="site-header">
         <div class="container">
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
                 <a href="index.html" class="navbar-brand d-flex align-items-center">
-                    <img src="img/logo-icon.jpg" alt="RehoSpace mountain mark">
+                    <img src="{{BASE}}img/logo-icon.webp" width="96" height="44" alt="RehoSpace mountain mark">
                     <span class="brand-text">RehoSpace<small>Enhancing Life Digitally</small></span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,7 +104,8 @@
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="nav-cta mt-3 mt-lg-0">
-                        <div class="nav-phone d-none d-xl-block">
+                        <a href="{{ALT_URL}}" hreflang="sw" lang="sw" class="lang-switch" title="Soma kwa Kiswahili"><i class="fas fa-globe"></i>Kiswahili</a>
+                        <div class="nav-phone d-none d-xxl-block">
                             <small>Call or WhatsApp</small>
                             <a href="tel:+255745814072">+255 745 814 072</a>
                         </div>
