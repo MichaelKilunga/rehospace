@@ -1,0 +1,6 @@
+# Send www to the apex domain
+https://www.rehospace.com/* https://rehospace.com/:splat 301
+
+# Old template page names
+/service.html /services 301
+/blog.html / 301

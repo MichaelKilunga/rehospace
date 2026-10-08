@@ -29,9 +29,10 @@
     }
 
     // Highlight the current page in the navigation
-    var path = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
+    // Works for both local files (about.html) and Cloudflare clean URLs (/about)
+    var path = (window.location.pathname.split("/").pop() || "index").toLowerCase().replace(/\.html$/, "");
     document.querySelectorAll(".navbar .nav-link").forEach(function (link) {
-        var href = (link.getAttribute("href") || "").split("#")[0].toLowerCase();
+        var href = (link.getAttribute("href") || "").split("#")[0].toLowerCase().replace(/\.html$/, "");
         if (href === path) { link.classList.add("active"); }
     });
 

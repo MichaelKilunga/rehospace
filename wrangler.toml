@@ -1,0 +1,5 @@
+# Cloudflare Pages configuration for the RehoSpace Enterprise website.
+# Deploy with:  npm run deploy   (builds dist/ then runs wrangler pages deploy)
+name = "rehospace-website"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-10-01"

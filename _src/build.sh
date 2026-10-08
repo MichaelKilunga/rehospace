@@ -17,6 +17,7 @@ function rep(s, pat, val,    i, out) {
     line = rep(line, "{{TITLE}}", title)
     line = rep(line, "{{DESC}}", desc)
     line = rep(line, "{{PAGE}}", page)
+    line = rep(line, "{{CANON}}", canon)
     if (index(line, "{{MOUNTAINS}}") > 0) { print svg } else { print line }
 }'
 
@@ -24,10 +25,20 @@ build() {
     local page="$1" title="$2" desc="$3"
     local src="$ROOT/_src/pages/$page" out="$ROOT/$page"
     local svg; svg="$(cat "$P/mountains.svg")"
+    # Clean URL used for canonical/og:url (Cloudflare Pages serves about.html as /about)
+    local canon="${page%.html}"; [ "$canon" = "index" ] && canon=""
     cat "$P/head.html" "$src" "$P/footer.html" \
-        | awk -v title="$title" -v desc="$desc" -v page="$page" -v svg="$svg" "$AWK_REPLACE" > "$out"
+        | awk -v title="$title" -v desc="$desc" -v page="$page" -v canon="$canon" -v svg="$svg" "$AWK_REPLACE" > "$out"
+    cp "$out" "$DIST/$page"
     echo "built $page"
 }
+
+# Deployable copy: only what the public site needs (no _src, no config files)
+DIST="$ROOT/dist"
+rm -rf "$DIST"; mkdir -p "$DIST"
+cp -r "$ROOT/css" "$ROOT/js" "$ROOT/lib" "$ROOT/img" "$DIST/"
+cp "$ROOT/robots.txt" "$ROOT/sitemap.xml" "$DIST/"
+cp "$ROOT/_src/static/_headers" "$ROOT/_src/static/_redirects" "$DIST/"
 
 build index.html    "RehoSpace Enterprise | Digital Products & Intelligent Business Systems in Tanzania" \
     "RehoSpace Enterprise builds digital products and intelligent business systems for pharmacies, shops, daycares, clinics and growing organisations in Tanzania. PillPointOne, DaycareMIS, RehoPOS and custom software."

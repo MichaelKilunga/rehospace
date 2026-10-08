@@ -1,0 +1,14 @@
+{
+  "name": "rehospace-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "RehoSpace Enterprise company website (static front-end, hosted on Cloudflare Pages)",
+  "scripts": {
+    "build": "bash _src/build.sh",
+    "deploy": "bash _src/build.sh && wrangler pages deploy dist --project-name rehospace-website",
+    "preview": "bash _src/build.sh && wrangler pages dev dist"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}
