@@ -1,5 +1,17 @@
-# Cloudflare Pages configuration for the RehoSpace Enterprise website.
-# Deploy with:  npm run deploy   (builds dist/ then runs wrangler pages deploy)
+# Cloudflare Workers (static assets) configuration for the RehoSpace Enterprise website.
+# Cloudflare now hosts new static sites as Workers with assets (Pages is in maintenance mode).
+# Deploy with:  npm run deploy   (builds dist/ then runs wrangler deploy)
 name = "rehospace-website"
-pages_build_output_dir = "dist"
 compatibility_date = "2026-10-01"
+workers_dev = true
+
+# Custom domains (Cloudflare manages DNS + certificates for these hostnames)
+routes = [
+  { pattern = "rehospace.com", custom_domain = true },
+  { pattern = "www.rehospace.com", custom_domain = true }
+]
+
+[assets]
+directory = "./dist"
+html_handling = "auto-trailing-slash"   # /about serves about.html
+not_found_handling = "404-page"          # serves dist/404.html when present

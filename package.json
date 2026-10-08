@@ -5,8 +5,8 @@
   "description": "RehoSpace Enterprise company website (static front-end, hosted on Cloudflare Pages)",
   "scripts": {
     "build": "bash _src/build.sh",
-    "deploy": "bash _src/build.sh && wrangler pages deploy dist --project-name rehospace-website",
-    "preview": "bash _src/build.sh && wrangler pages dev dist"
+    "deploy": "bash _src/build.sh && wrangler deploy",
+    "preview": "bash _src/build.sh && wrangler dev"
   },
   "devDependencies": {
     "wrangler": "^4"

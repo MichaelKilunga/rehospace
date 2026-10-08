@@ -50,3 +50,5 @@ build services.html "Our Services | Custom Software, Business Systems, Automatio
     "Custom software development, business management systems, web and mobile apps, AI and automation, payment and API integrations, networking and Wi-Fi portals, websites, digital marketing and technical support."
 build contact.html  "Contact RehoSpace Enterprise | Morogoro, Tanzania" \
     "Talk to RehoSpace. Call or WhatsApp +255 745 814 072, email info@rehospace.com, or visit us at Kihonda Mizani, Morogoro. Book a free demo of any of our systems."
+build 404.html      "Page Not Found | RehoSpace Enterprise" \
+    "The page you are looking for could not be found on the RehoSpace Enterprise website."
