@@ -29,8 +29,9 @@ function rep(s, pat, val,    i, out) {
     if (index(line, "{{MOUNTAINS}}") > 0) { print svg } else { print line }
 }'
 
-# Fresh dist/ with only what the public site needs
-rm -rf "$DIST"; mkdir -p "$DIST/sw" "$ROOT/sw"
+# Fresh dist/ with only what the public site needs. Empty it rather than delete it,
+# because a running `wrangler dev` keeps the folder open and Windows refuses the delete.
+mkdir -p "$DIST"; find "$DIST" -mindepth 1 -delete; mkdir -p "$DIST/sw" "$ROOT/sw"
 cp -r "$ROOT/css" "$ROOT/js" "$ROOT/lib" "$ROOT/img" "$DIST/"
 cp "$ROOT/robots.txt" "$DIST/"
 cp "$ROOT/_src/static/_headers" "$ROOT/_src/static/_redirects" "$DIST/"
@@ -82,11 +83,11 @@ build() {   # build <lang> <page> <title> <description>
 
 # ---------------------------------------------------------------- English (primary)
 build en index.html    "RehoSpace Enterprise | Digital Products & Intelligent Business Systems in Tanzania" \
-    "RehoSpace Enterprise builds digital products and intelligent business systems for pharmacies, shops, daycares, clinics and growing organisations in Tanzania. PillPointOne, DaycareMIS, RehoPOS, SkyPush and custom software."
+    "RehoSpace Enterprise builds digital products and intelligent business systems for pharmacies, shops, daycares, clinics and growing organisations in Tanzania. PillPointOne, DaycareMIS, RehoPOS, PushSMS and custom software."
 build en about.html    "About RehoSpace Enterprise | Technology Company in Morogoro, Tanzania" \
     "Learn who RehoSpace Enterprise is: a Morogoro-based technology company creating digital space for businesses and organisations to grow. Our story, vision, mission and values."
-build en products.html "Our Products | PillPointOne, DaycareMIS, RehoPOS, SkyPush | RehoSpace" \
-    "Explore RehoSpace products: PillPointOne pharmacy management, DaycareMIS daycare management, RehoPOS retail POS, SkyPush bulk SMS, RehoCare and the RehoSpace Real Estate Platform. Plans from TZS 10,000 per month."
+build en products.html "Our Products | PillPointOne, DaycareMIS, RehoPOS, PushSMS | RehoSpace" \
+    "Explore RehoSpace products: PillPointOne pharmacy management, DaycareMIS daycare management, RehoPOS retail POS, PushSMS bulk SMS, RehoCare and the RehoSpace Real Estate Platform. Plans from TZS 10,000 per month."
 build en services.html "Our Services | Custom Software, Business Systems, Automation & IT | RehoSpace" \
     "Custom software development, business management systems, web and mobile apps, AI and automation, payment and API integrations, networking and Wi-Fi portals, websites, digital marketing and technical support in Tanzania."
 build en contact.html  "Contact RehoSpace Enterprise | Morogoro, Tanzania" \
@@ -96,11 +97,11 @@ build en 404.html      "Page Not Found | RehoSpace Enterprise" \
 
 # ---------------------------------------------------------------- Kiswahili
 build sw index.html    "RehoSpace Enterprise | Bidhaa za Kidijitali na Mifumo ya Biashara Tanzania" \
-    "RehoSpace Enterprise inatengeneza bidhaa za kidijitali na mifumo ya biashara yenye akili kwa maduka ya dawa, maduka, daycare, zahanati na taasisi zinazokua Tanzania. PillPointOne, DaycareMIS, RehoPOS, SkyPush na programu maalum."
+    "RehoSpace Enterprise inatengeneza bidhaa za kidijitali na mifumo ya biashara yenye akili kwa maduka ya dawa, maduka, daycare, zahanati na taasisi zinazokua Tanzania. PillPointOne, DaycareMIS, RehoPOS, PushSMS na programu maalum."
 build sw about.html    "Kuhusu RehoSpace Enterprise | Kampuni ya Teknolojia Morogoro, Tanzania" \
     "Fahamu RehoSpace Enterprise: kampuni ya teknolojia iliyopo Morogoro inayotengeneza nafasi ya kidijitali kwa biashara na taasisi kukua. Historia yetu, dira, dhamira na maadili."
-build sw products.html "Bidhaa Zetu | PillPointOne, DaycareMIS, RehoPOS, SkyPush | RehoSpace" \
-    "Tazama bidhaa za RehoSpace: PillPointOne mfumo wa duka la dawa, DaycareMIS mfumo wa daycare, RehoPOS mfumo wa mauzo, SkyPush SMS kwa wingi, RehoCare na Jukwaa la Majengo na Viwanja. Vifurushi kuanzia TZS 10,000 kwa mwezi."
+build sw products.html "Bidhaa Zetu | PillPointOne, DaycareMIS, RehoPOS, PushSMS | RehoSpace" \
+    "Tazama bidhaa za RehoSpace: PillPointOne mfumo wa duka la dawa, DaycareMIS mfumo wa daycare, RehoPOS mfumo wa mauzo, PushSMS kwa wingi, RehoCare na Jukwaa la Majengo na Viwanja. Vifurushi kuanzia TZS 10,000 kwa mwezi."
 build sw services.html "Huduma Zetu | Programu Maalum, Mifumo ya Biashara, Automation na IT | RehoSpace" \
     "Utengenezaji wa programu maalum, mifumo ya usimamizi wa biashara, programu za wavuti na simu, AI na automation, miunganisho ya malipo na API, mitandao na Wi-Fi, tovuti, masoko ya kidijitali na msaada wa kiufundi Tanzania."
 build sw contact.html  "Wasiliana na RehoSpace Enterprise | Morogoro, Tanzania" \
