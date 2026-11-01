@@ -8,7 +8,7 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <meta name="author" content="RehoSpace Enterprise">
     <meta name="theme-color" content="#3B1D6E">
-    <meta name="geo.region" content="TZ-19">
+    <meta name="geo.region" content="TZ-16">
     <meta name="geo.placename" content="Morogoro, Tanzania">
 
     <!-- Canonical + language alternates -->
@@ -27,7 +27,7 @@
     <meta property="og:url" content="{{CANON_URL}}">
     <meta property="og:image" content="https://rehospace.com/img/og-image.jpg">
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="486">
+    <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="RehoSpace — Enhancing Life Digitally">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{TITLE}}">
@@ -35,8 +35,10 @@
     <meta name="twitter:image" content="https://rehospace.com/img/og-image.jpg">
 
     <!-- Icons -->
-    <link rel="icon" type="image/jpeg" href="{{BASE}}img/logo-icon.jpg">
-    <link rel="apple-touch-icon" href="{{BASE}}img/logo-icon.jpg">
+    <link rel="icon" href="{{BASE}}favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{BASE}}img/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="{{BASE}}img/icons/apple-touch-icon.png">
+    <link rel="manifest" href="{{BASE}}site.webmanifest">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,8 +56,8 @@
     <!-- Structured data: organisation + website -->
     <script type="application/ld+json">
     {"@context":"https://schema.org","@graph":[
-      {"@type":"Organization","@id":"https://rehospace.com/#organization","name":"RehoSpace Enterprise","alternateName":"RehoSpace","url":"https://rehospace.com/","logo":{"@type":"ImageObject","url":"https://rehospace.com/img/logo.jpg"},"image":"https://rehospace.com/img/og-image.jpg","slogan":"Enhancing Life Digitally","description":"Tanzanian technology company building digital products and intelligent business systems: PillPointOne pharmacy management, DaycareMIS, RehoPOS, PushSMS bulk SMS and custom software.","email":"info@rehospace.com","telephone":"+255745814072","foundingDate":"2026","founder":{"@type":"Person","name":"Michael Simon Kilunga","jobTitle":"Founder & Software Engineer"},"address":{"@type":"PostalAddress","streetAddress":"Kihonda Mizani, behind Pesame Park","addressLocality":"Morogoro","addressRegion":"Morogoro","addressCountry":"TZ"},"areaServed":{"@type":"Country","name":"Tanzania"},"contactPoint":[{"@type":"ContactPoint","telephone":"+255745814072","contactType":"sales","availableLanguage":["en","sw"]},{"@type":"ContactPoint","telephone":"+255742177328","contactType":"customer support","availableLanguage":["en","sw"]}],"sameAs":["https://www.facebook.com/rehospace","https://www.instagram.com/rehospace","https://www.tiktok.com/@rehospace","https://www.youtube.com/@rehospace","https://www.linkedin.com/company/rehospace"]},
-      {"@type":"WebSite","@id":"https://rehospace.com/#website","url":"https://rehospace.com/","name":"RehoSpace Enterprise","publisher":{"@id":"https://rehospace.com/#organization"},"inLanguage":["en","sw"]}
+      {"@type":["Organization","ProfessionalService"],"@id":"https://rehospace.com/#organization","name":"RehoSpace Enterprise","alternateName":"RehoSpace","url":"https://rehospace.com/","logo":{"@type":"ImageObject","url":"https://rehospace.com/img/logo.jpg"},"image":"https://rehospace.com/img/og-image.jpg","slogan":"Enhancing Life Digitally","description":"Software development company in Morogoro, Tanzania. RehoSpace builds custom software, web and mobile apps and business systems (PillPointOne pharmacy management, DaycareMIS, RehoPOS, PushSMS bulk SMS), and trains and mentors young software developers in Tanzania and across Africa.","email":"info@rehospace.com","telephone":"+255745814072","foundingDate":"2026","founder":{"@type":"Person","name":"Michael Simon Kilunga","jobTitle":"Founder & Software Engineer"},"address":{"@type":"PostalAddress","streetAddress":"Kihonda Mizani, behind Pesame Park","addressLocality":"Morogoro","addressRegion":"Morogoro","addressCountry":"TZ"},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"18:00"},"areaServed":[{"@type":"Country","name":"Tanzania"},{"@type":"Continent","name":"Africa"}],"knowsAbout":["Software development","Custom software development","Web application development","Mobile app development","Business management systems","Pharmacy management software","Point of sale (POS) systems","Bulk SMS","Mobile money integration","AI and business automation","Software development training","Mentorship for young software developers","Internships and field attachment for IT students"],"contactPoint":[{"@type":"ContactPoint","telephone":"+255745814072","contactType":"sales","availableLanguage":["en","sw"]},{"@type":"ContactPoint","telephone":"+255742177328","contactType":"customer support","availableLanguage":["en","sw"]}],"sameAs":["https://www.facebook.com/rehospace","https://www.instagram.com/rehospace","https://www.tiktok.com/@rehospace","https://www.youtube.com/@rehospace","https://www.linkedin.com/company/rehospace"]},
+      {"@type":"WebSite","@id":"https://rehospace.com/#website","url":"https://rehospace.com/","name":"RehoSpace Enterprise","alternateName":"RehoSpace","publisher":{"@id":"https://rehospace.com/#organization"},"inLanguage":["en","sw"]}
     ]}
     </script>
 </head>
@@ -101,6 +103,7 @@
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <a href="products.html" class="nav-item nav-link">Products</a>
                         <a href="services.html" class="nav-item nav-link">Services</a>
+                        <a href="careers.html" class="nav-item nav-link">Careers</a>
                         <a href="agents.html" class="nav-item nav-link">Agents</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>

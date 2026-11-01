@@ -386,11 +386,16 @@ body { overflow-x: hidden; }
 .navbar .nav-link { white-space: nowrap; }
 .nav-cta .btn, .nav-phone a, .nav-phone small { white-space: nowrap; }
 @media (min-width: 992px) and (max-width: 1399.98px) {
-    .navbar .nav-link { padding: .75rem .7rem !important; font-size: .95rem; }
+    .navbar .nav-link { padding: .75rem .5rem !important; font-size: .9rem; }
+    .navbar .nav-link.active::after { left: .5rem; right: .5rem; }
     .navbar-brand .brand-text { font-size: 1.3rem; }
     .navbar-brand img { height: 38px; }
     .nav-cta { gap: .5rem; }
     .lang-switch { padding: .35rem .7rem; font-size: .78rem; }
+}
+@media (min-width: 1400px) {   /* the phone number joins the bar here */
+    .navbar .nav-link { padding: .75rem .7rem !important; font-size: .95rem; }
+    .navbar .nav-link.active::after { left: .7rem; right: .7rem; }
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .navbar-brand .brand-text { display: none; }   /* icon-only brand so long labels fit */

@@ -3,8 +3,8 @@
     <section class="page-hero">
         <div class="container">
             <nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Nyumbani</a></li><li class="breadcrumb-item active" aria-current="page">Huduma</li></ol></nav>
-            <h1 class="wow fadeInUp" data-wow-delay=".1s">Huduma Zetu</h1>
-            <p class="lead mt-3 wow fadeInUp" data-wow-delay=".2s">Kila taasisi ni tofauti. Duka la dawa linaendeshwa tofauti na shule, na kampuni inayokua inahitaji miunganisho ambayo duka dogo halihitaji. Tunachanganya bidhaa zetu na huduma maalum za teknolojia ili suluhisho likufae.</p>
+            <h1 class="wow fadeInUp" data-wow-delay=".1s">Huduma za Kutengeneza Software Tanzania</h1>
+            <p class="lead mt-3 wow fadeInUp" data-wow-delay=".2s">Kila taasisi ni tofauti. Duka la dawa linaendeshwa tofauti na shule, na kampuni inayokua inahitaji miunganisho ambayo duka dogo halihitaji. Kama kampuni ya kutengeneza software iliyopo Morogoro, tunachanganya bidhaa zetu na utengenezaji wa mifumo maalum kwa wateja kote Tanzania na, kwa mtandao, kote Afrika.</p>
         </div>
         {{MOUNTAINS}}
     </section>
@@ -126,8 +126,24 @@
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="section bg-lilac">
+        <div class="container" style="max-width:860px">
+            <div class="text-center mb-4 wow fadeInUp" data-wow-delay=".1s">
+                <span class="section-eyebrow">Maswali</span>
+                <h2 class="section-title">Kufanya kazi na RehoSpace</h2>
+            </div>
+            <details class="faq-item"><summary>Je, mnatengeneza software maalum kwa biashara Tanzania?</summary><p>Ndiyo. Tunabuni na kutengeneza software maalum, mifumo ya usimamizi wa biashara, web applications na apps za Android kwa biashara na taasisi kote Tanzania, kuanzia mahitaji hadi kuweka mfumo kazini na msaada.</p></details>
+            <details class="faq-item"><summary>Je, mnafanya kazi na wateja nje ya Tanzania?</summary><p>Ndiyo. Tuko Morogoro na tunafanya kazi kwa mtandao na wateja wa nchi nyingine za Afrika.</p></details>
+            <details class="faq-item"><summary>Je, mnaweza kuunganisha M-Pesa, Airtel Money na Mixx by Yas?</summary><p>Ndiyo. Tunaunganisha mifumo na malipo kwa simu, payment gateways, SMS, WhatsApp, barua pepe na API za watoa huduma wengine.</p></details>
+            <details class="faq-item"><summary>Mfumo maalum unagharimu kiasi gani?</summary><p>Inategemea mfumo unahitaji kufanya nini. Tuambie changamoto yako na tutakutumia pendekezo la vitendo pamoja na nukuu ya bei iliyo wazi.</p></details>
+            <details class="faq-item"><summary>Je, mnatoa msaada baada ya mfumo kuanza kutumika?</summary><p>Ndiyo. Tunawafundisha wafanyakazi wako, tunahamisha data yako na tunakusaidia kupitia WhatsApp na simu, pamoja na matengenezo, masasisho na maboresho.</p></details>
+            <details class="faq-item"><summary>Je, mnatoa mafunzo ya software development?</summary><p>Ndiyo. Tunatoa kozi za vitendo za software development, internship, mafunzo kwa vitendo (field) na mentorship kwa vijana. Tazama <a href="careers.html">Mafunzo na Ajira</a>.</p></details>
+        </div>
+    </section>
+
     <!-- CTA -->
-    <section class="pb-5 mb-4">
+    <section class="pb-5 mb-4 pt-5">
         <div class="container">
             <div class="cta-band text-center wow fadeInUp" data-wow-delay=".2s">
                 <h2 class="mb-3">Tueleze changamoto yako</h2>
@@ -143,9 +159,15 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@graph":[
       {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Nyumbani","item":"https://rehospace.com/sw/"},{"@type":"ListItem","position":2,"name":"Huduma","item":"https://rehospace.com/sw/services"}]},
-      {"@type":"Service","serviceType":"Utengenezaji wa programu maalum","provider":{"@id":"https://rehospace.com/#organization"},"areaServed":{"@type":"Country","name":"Tanzania"},"url":"https://rehospace.com/sw/services#software"},
-      {"@type":"Service","serviceType":"Mifumo ya usimamizi wa biashara","provider":{"@id":"https://rehospace.com/#organization"},"areaServed":{"@type":"Country","name":"Tanzania"},"url":"https://rehospace.com/sw/services#systems"},
+      {"@type":"Service","serviceType":"Utengenezaji wa programu maalum","provider":{"@id":"https://rehospace.com/#organization"},"areaServed":[{"@type":"Country","name":"Tanzania"},{"@type":"Continent","name":"Africa"}],"url":"https://rehospace.com/sw/services#software"},
+      {"@type":"Service","serviceType":"Mifumo ya usimamizi wa biashara","provider":{"@id":"https://rehospace.com/#organization"},"areaServed":[{"@type":"Country","name":"Tanzania"},{"@type":"Continent","name":"Africa"}],"url":"https://rehospace.com/sw/services#systems"},
+      {"@type":"Service","serviceType":"AI na automation ya biashara","provider":{"@id":"https://rehospace.com/#organization"},"areaServed":[{"@type":"Country","name":"Tanzania"},{"@type":"Continent","name":"Africa"}],"url":"https://rehospace.com/sw/services#automation"},
+      {"@type":"Service","serviceType":"Miunganisho ya API na malipo","provider":{"@id":"https://rehospace.com/#organization"},"areaServed":[{"@type":"Country","name":"Tanzania"},{"@type":"Continent","name":"Africa"}],"url":"https://rehospace.com/sw/services#integrations"},
       {"@type":"Service","serviceType":"Miundombinu ya IT na mitandao","provider":{"@id":"https://rehospace.com/#organization"},"areaServed":{"@type":"Country","name":"Tanzania"},"url":"https://rehospace.com/sw/services#infrastructure"},
-      {"@type":"Service","serviceType":"Tovuti na masoko ya kidijitali","provider":{"@id":"https://rehospace.com/#organization"},"areaServed":{"@type":"Country","name":"Tanzania"},"url":"https://rehospace.com/sw/services#websites"}
+      {"@type":"Service","serviceType":"Tovuti na masoko ya kidijitali","provider":{"@id":"https://rehospace.com/#organization"},"areaServed":[{"@type":"Country","name":"Tanzania"},{"@type":"Continent","name":"Africa"}],"url":"https://rehospace.com/sw/services#websites"},
+      {"@type":"Service","serviceType":"Programu za wavuti na simu","provider":{"@id":"https://rehospace.com/#organization"},"areaServed":[{"@type":"Country","name":"Tanzania"},{"@type":"Continent","name":"Africa"}],"url":"https://rehospace.com/sw/services#apps"},
+      {"@type":"Service","serviceType":"Mabadiliko ya kidijitali","provider":{"@id":"https://rehospace.com/#organization"},"areaServed":[{"@type":"Country","name":"Tanzania"},{"@type":"Continent","name":"Africa"}],"url":"https://rehospace.com/sw/services#transformation"},
+      {"@type":"Service","serviceType":"Mafunzo na msaada wa kiufundi","provider":{"@id":"https://rehospace.com/#organization"},"areaServed":[{"@type":"Country","name":"Tanzania"},{"@type":"Continent","name":"Africa"}],"url":"https://rehospace.com/sw/services#support"},
+      {"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Je, mnatengeneza software maalum kwa biashara Tanzania?","acceptedAnswer":{"@type":"Answer","text":"Ndiyo. Tunabuni na kutengeneza software maalum, mifumo ya usimamizi wa biashara, web applications na apps za Android kwa biashara na taasisi kote Tanzania, kuanzia mahitaji hadi kuweka mfumo kazini na msaada."}},{"@type":"Question","name":"Je, mnafanya kazi na wateja nje ya Tanzania?","acceptedAnswer":{"@type":"Answer","text":"Ndiyo. Tuko Morogoro na tunafanya kazi kwa mtandao na wateja wa nchi nyingine za Afrika."}},{"@type":"Question","name":"Je, mnaweza kuunganisha M-Pesa, Airtel Money na Mixx by Yas?","acceptedAnswer":{"@type":"Answer","text":"Ndiyo. Tunaunganisha mifumo na malipo kwa simu, payment gateways, SMS, WhatsApp, barua pepe na API za watoa huduma wengine."}},{"@type":"Question","name":"Mfumo maalum unagharimu kiasi gani?","acceptedAnswer":{"@type":"Answer","text":"Inategemea mfumo unahitaji kufanya nini. Tuambie changamoto yako na tutakutumia pendekezo la vitendo pamoja na nukuu ya bei iliyo wazi."}},{"@type":"Question","name":"Je, mnatoa msaada baada ya mfumo kuanza kutumika?","acceptedAnswer":{"@type":"Answer","text":"Ndiyo. Tunawafundisha wafanyakazi wako, tunahamisha data yako na tunakusaidia kupitia WhatsApp na simu, pamoja na matengenezo, masasisho na maboresho."}},{"@type":"Question","name":"Je, mnatoa mafunzo ya software development?","acceptedAnswer":{"@type":"Answer","text":"Ndiyo. Tunatoa kozi za vitendo za software development, internship, mafunzo kwa vitendo (field) na mentorship kwa vijana. Tazama Mafunzo na Ajira."}}]}
     ]}
     </script>

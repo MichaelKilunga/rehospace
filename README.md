@@ -5,17 +5,17 @@ Public website for RehoSpace Enterprise (rehospace.com). Static, bilingual front
 ## Structure
 
 ```
-index.html, about.html, products.html, services.html, contact.html, 404.html   built English pages (do not edit)
+index.html, about.html, products.html, services.html, careers.html, agents.html, contact.html, 404.html   built English pages (do not edit)
 sw/*.html                 built Kiswahili pages (do not edit)
 _src/pages/en/, _src/pages/sw/   page bodies — edit content here
 _src/partials/en/, _src/partials/sw/   head (meta, structured data, topbar, navbar) and footer per language
 _src/partials/mountains.svg
-_src/static/_headers, _redirects   Cloudflare headers and redirects
+_src/static/              Cloudflare _headers and _redirects, site.webmanifest, llms.txt (copied to the site root)
 _src/build.sh             assembles pages, writes sitemap.xml, stages dist/
-_src/optimize-images.mjs  creates WebP versions of brand/product images (node, uses sharp)
+_src/optimize-images.mjs  creates WebP versions, the 1200x630 share image and the favicons (node, uses sharp)
 css/style.css             all site styling (brand tokens at the top)
 js/main.js                spinner, sticky header, counters, nav highlight, bilingual contact form
-img/                      brand assets and img/products/ (logos, screenshots, WebP derivatives)
+img/                      brand assets, img/products/ (logos, screenshots, WebP derivatives), img/icons/ (favicons)
 dist/                     deploy folder (generated, ignored by git)
 wrangler.toml             Cloudflare Workers config (custom domains rehospace.com + www)
 ```
@@ -40,7 +40,21 @@ Put originals in `img/` or `img/products/`, add a line to `_src/optimize-images.
 
 ## SEO
 
-Per page: canonical URL, `hreflang` alternates (en, sw, x-default), Open Graph and Twitter cards, JSON-LD (Organization, WebSite, BreadcrumbList, product ItemList, Service, AboutPage, ContactPage). Site-wide: `robots.txt`, generated `sitemap.xml` with language alternates, security and caching headers in `_headers`, clean URLs (`/about`, `/sw/about`).
+Per page: canonical URL, `hreflang` alternates (en, sw, x-default), Open Graph and Twitter cards, JSON-LD (Organization, WebSite, BreadcrumbList, product ItemList, Service, Course, FAQPage, AboutPage, ContactPage). Site-wide: `robots.txt`, generated `sitemap.xml` with language alternates, security and caching headers in `_headers`, clean URLs (`/about`, `/sw/about`), square favicons, and `llms.txt` (a plain summary for AI search assistants).
+
+Each page targets one main search phrase, used in its title (in `_src/build.sh`), H1 and opening paragraph:
+
+| Page | English target | Kiswahili target |
+| --- | --- | --- |
+| Home | software development company in Tanzania | kampuni ya kutengeneza software Tanzania |
+| Services | software development services in Tanzania | huduma za kutengeneza software |
+| Careers | software development training and internships in Tanzania | mafunzo ya software development, field na ajira kwa vijana |
+| Products | pharmacy, POS, daycare and bulk SMS software in Tanzania | mfumo wa duka la dawa, POS, daycare na SMS |
+| Agents | PillPointOne agent, monthly commission | wakala wa PillPointOne |
+
+The FAQ sections on services, careers and agents are repeated as FAQPage JSON-LD at the bottom of each page body. Change both together.
+
+`<lastmod>` in the sitemap is the last commit date of each page body, so commit content changes before deploying.
 
 After deploying, submit `https://rehospace.com/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
 

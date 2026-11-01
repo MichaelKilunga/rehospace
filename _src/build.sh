@@ -34,20 +34,29 @@ function rep(s, pat, val,    i, out) {
 mkdir -p "$DIST"; find "$DIST" -mindepth 1 -delete; mkdir -p "$DIST/sw" "$ROOT/sw"
 cp -r "$ROOT/css" "$ROOT/js" "$ROOT/lib" "$ROOT/img" "$DIST/"
 cp "$ROOT/robots.txt" "$DIST/"
-cp "$ROOT/_src/static/_headers" "$ROOT/_src/static/_redirects" "$DIST/"
+cp "$ROOT/_src/static/_headers" "$ROOT/_src/static/_redirects" "$ROOT/_src/static/site.webmanifest" "$ROOT/_src/static/llms.txt" "$DIST/"
+cp "$ROOT/img/icons/favicon.ico" "$DIST/favicon.ico"
 # Large source images are only inputs for _src/optimize-images.mjs; the site uses the WebP versions
 rm -f "$DIST/img/products/pillpointone-devices.png" "$DIST/img/products/daycaremis-poster.png"
 
 SITEMAP_ENTRIES=""
-sitemap_url() {   # $1 = loc, $2 = clean path (for alternates)
+sitemap_url() {   # $1 = loc, $2 = clean path (for alternates), $3 = lastmod
     SITEMAP_ENTRIES+="  <url>
     <loc>$1</loc>
     <xhtml:link rel=\"alternate\" hreflang=\"en\" href=\"$SITE/$2\"/>
     <xhtml:link rel=\"alternate\" hreflang=\"sw\" href=\"$SITE/sw/$2\"/>
     <xhtml:link rel=\"alternate\" hreflang=\"x-default\" href=\"$SITE/$2\"/>
-    <lastmod>$TODAY</lastmod>
+    <lastmod>$3</lastmod>
   </url>
 "
+}
+
+# Google ignores <lastmod> when it is always "today", so use the page body's last commit date,
+# or today when the body has uncommitted edits or is new.
+lastmod() {
+    local d
+    if git -C "$ROOT" diff --quiet HEAD -- "$1" 2>/dev/null; then d="$(git -C "$ROOT" log -1 --format=%cs -- "$1" 2>/dev/null)"; fi
+    echo "${d:-$TODAY}"
 }
 
 build() {   # build <lang> <page> <title> <description>
@@ -71,44 +80,48 @@ build() {   # build <lang> <page> <title> <description>
               "$AWK_REPLACE" > "$out"
 
     if [ "$page" = "404.html" ]; then
-        sed -i -E 's|href="(about\|products\|services\|agents\|contact)\.html|href="/\1.html|g; s|href="index\.html|href="/|g' "$out"
+        sed -i -E 's|href="(about\|products\|services\|agents\|careers\|contact)\.html|href="/\1.html|g; s|href="index\.html|href="/|g' "$out"
         cp "$out" "$DIST/404.html"
     elif [ "$lang" = "en" ]; then
-        cp "$out" "$DIST/$page"; sitemap_url "$en_url" "$clean"
+        cp "$out" "$DIST/$page"; sitemap_url "$en_url" "$clean" "$(lastmod "$src")"
     else
-        cp "$out" "$DIST/sw/$page"; sitemap_url "$sw_url" "$clean"
+        cp "$out" "$DIST/sw/$page"; sitemap_url "$sw_url" "$clean" "$(lastmod "$src")"
     fi
     echo "built $lang/$page"
 }
 
 # ---------------------------------------------------------------- English (primary)
-build en index.html    "RehoSpace Enterprise | Digital Products & Intelligent Business Systems in Tanzania" \
-    "RehoSpace Enterprise builds digital products and intelligent business systems for pharmacies, shops, daycares, clinics and growing organisations in Tanzania. PillPointOne, DaycareMIS, RehoPOS, PushSMS and custom software."
-build en about.html    "About RehoSpace Enterprise | Technology Company in Morogoro, Tanzania" \
-    "Learn who RehoSpace Enterprise is: a Morogoro-based technology company creating digital space for businesses and organisations to grow. Our story, vision, mission and values."
-build en products.html "Our Products | PillPointOne, DaycareMIS, RehoPOS, PushSMS | RehoSpace" \
-    "Explore RehoSpace products: PillPointOne pharmacy management, DaycareMIS daycare management, RehoPOS retail POS, PushSMS bulk SMS, RehoCare and the RehoSpace Real Estate Platform. Plans from TZS 10,000 per month."
-build en services.html "Our Services | Custom Software, Business Systems, Automation & IT | RehoSpace" \
-    "Custom software development, business management systems, web and mobile apps, AI and automation, payment and API integrations, networking and Wi-Fi portals, websites, digital marketing and technical support in Tanzania."
+build en index.html    "Software Development Company in Tanzania | RehoSpace Enterprise" \
+    "RehoSpace Enterprise is a software development company in Morogoro, Tanzania, building custom software, web and mobile apps and business systems, and training young developers across Africa."
+build en about.html    "About RehoSpace Enterprise | Software Company in Morogoro, Tanzania" \
+    "RehoSpace Enterprise is a Tanzanian software company based in Morogoro. Our story, vision and values, and how we build products, train young developers and create jobs."
+build en products.html "Pharmacy, POS, Daycare & Bulk SMS Software in Tanzania | RehoSpace" \
+    "Business software made in Tanzania: PillPointOne pharmacy management system, DaycareMIS daycare software, RehoPOS point of sale, PushSMS bulk SMS, RehoCare and a Real Estate Platform. Plans from TZS 10,000 per month."
+build en services.html "Software Development Services in Tanzania | RehoSpace" \
+    "Custom software development in Tanzania and across Africa: business systems, web and mobile apps, AI and automation, M-Pesa and API integrations, websites, networking and technical support."
+build en careers.html  "Software Development Training & Internships in Tanzania | RehoSpace" \
+    "Learn software development with RehoSpace in Morogoro or online. Hands-on courses, internships and field attachment on live products, mentorship and a path to tech jobs for young people in Tanzania and Africa."
 build en agents.html   "Become a PillPointOne Agent | Earn Monthly Commission | RehoSpace" \
     "Join the PillPointOne agent network. Register pharmacies anywhere in Tanzania and earn 20% of every PillPointOne plan payment, for as long as the pharmacy keeps paying. No joining fee; open to anyone aged 18 or older."
-build en contact.html  "Contact RehoSpace Enterprise | Morogoro, Tanzania" \
+build en contact.html  "Contact RehoSpace Enterprise | Software Company in Morogoro, Tanzania" \
     "Talk to RehoSpace. Call or WhatsApp +255 745 814 072, email info@rehospace.com, or visit us at Kihonda Mizani, Morogoro. Book a free demo of any of our systems."
 build en 404.html      "Page Not Found | RehoSpace Enterprise" \
     "The page you are looking for could not be found on the RehoSpace Enterprise website."
 
 # ---------------------------------------------------------------- Kiswahili
-build sw index.html    "RehoSpace Enterprise | Bidhaa za Kidijitali na Mifumo ya Biashara Tanzania" \
-    "RehoSpace Enterprise inatengeneza bidhaa za kidijitali na mifumo ya biashara yenye akili kwa maduka ya dawa, maduka, daycare, zahanati na taasisi zinazokua Tanzania. PillPointOne, DaycareMIS, RehoPOS, PushSMS na programu maalum."
-build sw about.html    "Kuhusu RehoSpace Enterprise | Kampuni ya Teknolojia Morogoro, Tanzania" \
-    "Fahamu RehoSpace Enterprise: kampuni ya teknolojia iliyopo Morogoro inayotengeneza nafasi ya kidijitali kwa biashara na taasisi kukua. Historia yetu, dira, dhamira na maadili."
-build sw products.html "Bidhaa Zetu | PillPointOne, DaycareMIS, RehoPOS, PushSMS | RehoSpace" \
-    "Tazama bidhaa za RehoSpace: PillPointOne mfumo wa duka la dawa, DaycareMIS mfumo wa daycare, RehoPOS mfumo wa mauzo, PushSMS kwa wingi, RehoCare na Jukwaa la Majengo na Viwanja. Vifurushi kuanzia TZS 10,000 kwa mwezi."
-build sw services.html "Huduma Zetu | Programu Maalum, Mifumo ya Biashara, Automation na IT | RehoSpace" \
-    "Utengenezaji wa programu maalum, mifumo ya usimamizi wa biashara, programu za wavuti na simu, AI na automation, miunganisho ya malipo na API, mitandao na Wi-Fi, tovuti, masoko ya kidijitali na msaada wa kiufundi Tanzania."
+build sw index.html    "Kampuni ya Kutengeneza Software na Mifumo Tanzania | RehoSpace" \
+    "RehoSpace Enterprise ni kampuni ya kutengeneza software na mifumo ya biashara iliyopo Morogoro, Tanzania: programu maalum, apps za wavuti na simu, PillPointOne, RehoPOS na zaidi. Pia tunawafundisha vijana software development."
+build sw about.html    "Kuhusu RehoSpace Enterprise | Kampuni ya Software Morogoro, Tanzania" \
+    "RehoSpace Enterprise ni kampuni ya software ya Kitanzania iliyopo Morogoro. Historia yetu, dira na maadili, na jinsi tunavyotengeneza bidhaa, kuwafundisha vijana na kutengeneza ajira."
+build sw products.html "Mifumo ya Duka la Dawa, POS, Daycare na SMS Tanzania | RehoSpace" \
+    "Software za biashara zilizotengenezwa Tanzania: PillPointOne mfumo wa duka la dawa, DaycareMIS mfumo wa daycare, RehoPOS mfumo wa mauzo, PushSMS kwa wingi, RehoCare na Jukwaa la Majengo na Viwanja. Vifurushi kuanzia TZS 10,000 kwa mwezi."
+build sw services.html "Huduma za Kutengeneza Software na Mifumo Tanzania | RehoSpace" \
+    "Utengenezaji wa software maalum Tanzania na Afrika: mifumo ya biashara, apps za wavuti na simu, AI na automation, M-Pesa na API, tovuti, mitandao, Wi-Fi na msaada wa kiufundi."
+build sw careers.html  "Mafunzo ya Software Development, Field na Ajira kwa Vijana | RehoSpace" \
+    "Jifunze software development na RehoSpace Morogoro au mtandaoni. Kozi ya vitendo, mafunzo kwa vitendo (field) na internship kwenye mifumo halisi, mentorship na njia ya ajira ya teknolojia kwa vijana Tanzania na Afrika."
 build sw agents.html   "Kuwa Wakala wa PillPointOne | Kipato cha Kila Mwezi | RehoSpace" \
     "Jiunge na mtandao wa mawakala wa PillPointOne. Sajili maduka ya dawa popote Tanzania na upate 20% ya kila malipo ya vifurushi vya PillPointOne, kila mwezi duka linapolipa. Hakuna ada ya kujiunga; umri miaka 18 au zaidi."
-build sw contact.html  "Wasiliana na RehoSpace Enterprise | Morogoro, Tanzania" \
+build sw contact.html  "Wasiliana na RehoSpace Enterprise | Kampuni ya Software Morogoro" \
     "Zungumza na RehoSpace. Piga au WhatsApp +255 745 814 072, barua pepe info@rehospace.com, au tutembelee Kihonda Mizani, Morogoro. Omba demo ya bure ya mfumo wowote wetu."
 
 # ---------------------------------------------------------------- Sitemap (both languages, with hreflang alternates)

@@ -2,11 +2,13 @@
 (function () {
     "use strict";
 
-    // Spinner
-    window.addEventListener("load", function () {
+    // Spinner: hide once the page is parsed rather than after every image and font has loaded,
+    // so visitors on slow mobile connections see content sooner
+    function hideSpinner() {
         var spinner = document.getElementById("spinner");
-        if (spinner) { setTimeout(function () { spinner.classList.remove("show"); }, 150); }
-    });
+        if (spinner) { spinner.classList.remove("show"); }
+    }
+    if (document.readyState === "loading") { document.addEventListener("DOMContentLoaded", hideSpinner); } else { hideSpinner(); }
 
     // Scroll reveal animations
     if (typeof WOW === "function") { new WOW({ offset: 60, mobile: true }).init(); }

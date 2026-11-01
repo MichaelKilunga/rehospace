@@ -1,0 +1,28 @@
+# RehoSpace Enterprise
+
+> RehoSpace Enterprise is a software development company based in Morogoro, Tanzania (registered business name No. 713340). It builds custom software, web and mobile apps and business systems for organisations across Tanzania and, remotely, across Africa. It also trains, mentors and employs young people in software development. Website in English and Kiswahili.
+
+Contact: +255 745 814 072 (call or WhatsApp), info@rehospace.com, Kihonda Mizani, behind Pesame Park, Morogoro, Tanzania. Open Monday to Saturday, 8:00 to 18:00.
+
+## Services
+
+- [Software development services](https://rehospace.com/services): custom software, business management systems, web and mobile apps, AI and automation, M-Pesa, Airtel Money and Mixx by Yas integrations, websites and digital marketing, IT networking and Wi-Fi, training and technical support.
+
+## Products
+
+- [PillPointOne](https://pillpointone.com): pharmacy management system used by 100+ pharmacies in Tanzania. From TZS 10,000 per month.
+- [DaycareMIS](https://daycare.rehospace.com): daycare and nursery management. From TZS 10,000 per month.
+- [RehoPOS](https://pos.rehospace.com): point of sale and inventory for shops. TZS 10,000 per month, 7-day free trial.
+- [PushSMS](https://pushsms.rehospace.com): bulk SMS for businesses, schools and churches. From TZS 17 per SMS.
+- [All products](https://rehospace.com/products), including RehoCare (patient retention, coming soon) and the RehoSpace Real Estate Platform (coming soon).
+
+## Training and careers for young people
+
+- [Training & Careers](https://rehospace.com/careers): software development course, internships and field attachment for students and graduates, one-to-one mentorship, and careers at RehoSpace. Onsite in Morogoro or online; open to learners across Africa. Some programmes are free and others carry a fee.
+- [PillPointOne agent programme](https://rehospace.com/agents): earn 20% commission on every PillPointOne plan payment from pharmacies you register, for as long as they pay. Commission, not salary. No joining fee; age 18+.
+
+## Company
+
+- [About](https://rehospace.com/about): story, vision, mission, values and founder (Michael Simon Kilunga, Founder & Software Engineer).
+- [Contact](https://rehospace.com/contact)
+- [Kiswahili edition](https://rehospace.com/sw/)
