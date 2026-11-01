@@ -71,7 +71,7 @@ build() {   # build <lang> <page> <title> <description>
               "$AWK_REPLACE" > "$out"
 
     if [ "$page" = "404.html" ]; then
-        sed -i -E 's|href="(about\|products\|services\|contact)\.html|href="/\1.html|g; s|href="index\.html|href="/|g' "$out"
+        sed -i -E 's|href="(about\|products\|services\|agents\|contact)\.html|href="/\1.html|g; s|href="index\.html|href="/|g' "$out"
         cp "$out" "$DIST/404.html"
     elif [ "$lang" = "en" ]; then
         cp "$out" "$DIST/$page"; sitemap_url "$en_url" "$clean"
@@ -90,6 +90,8 @@ build en products.html "Our Products | PillPointOne, DaycareMIS, RehoPOS, PushSM
     "Explore RehoSpace products: PillPointOne pharmacy management, DaycareMIS daycare management, RehoPOS retail POS, PushSMS bulk SMS, RehoCare and the RehoSpace Real Estate Platform. Plans from TZS 10,000 per month."
 build en services.html "Our Services | Custom Software, Business Systems, Automation & IT | RehoSpace" \
     "Custom software development, business management systems, web and mobile apps, AI and automation, payment and API integrations, networking and Wi-Fi portals, websites, digital marketing and technical support in Tanzania."
+build en agents.html   "Become a PillPointOne Agent | Earn Monthly Commission | RehoSpace" \
+    "Join the PillPointOne agent network. Register pharmacies anywhere in Tanzania and earn 10% of every package payment, for as long as the pharmacy keeps paying. No joining fee; open to anyone aged 18 or older."
 build en contact.html  "Contact RehoSpace Enterprise | Morogoro, Tanzania" \
     "Talk to RehoSpace. Call or WhatsApp +255 745 814 072, email info@rehospace.com, or visit us at Kihonda Mizani, Morogoro. Book a free demo of any of our systems."
 build en 404.html      "Page Not Found | RehoSpace Enterprise" \
@@ -104,6 +106,8 @@ build sw products.html "Bidhaa Zetu | PillPointOne, DaycareMIS, RehoPOS, PushSMS
     "Tazama bidhaa za RehoSpace: PillPointOne mfumo wa duka la dawa, DaycareMIS mfumo wa daycare, RehoPOS mfumo wa mauzo, PushSMS kwa wingi, RehoCare na Jukwaa la Majengo na Viwanja. Vifurushi kuanzia TZS 10,000 kwa mwezi."
 build sw services.html "Huduma Zetu | Programu Maalum, Mifumo ya Biashara, Automation na IT | RehoSpace" \
     "Utengenezaji wa programu maalum, mifumo ya usimamizi wa biashara, programu za wavuti na simu, AI na automation, miunganisho ya malipo na API, mitandao na Wi-Fi, tovuti, masoko ya kidijitali na msaada wa kiufundi Tanzania."
+build sw agents.html   "Kuwa Wakala wa PillPointOne | Kipato cha Kila Mwezi | RehoSpace" \
+    "Jiunge na mtandao wa mawakala wa PillPointOne. Sajili maduka ya dawa popote Tanzania na upate 10% ya kila malipo ya kifurushi, kila mwezi duka linapolipa. Hakuna ada ya kujiunga; umri miaka 18 au zaidi."
 build sw contact.html  "Wasiliana na RehoSpace Enterprise | Morogoro, Tanzania" \
     "Zungumza na RehoSpace. Piga au WhatsApp +255 745 814 072, barua pepe info@rehospace.com, au tutembelee Kihonda Mizani, Morogoro. Omba demo ya bure ya mfumo wowote wetu."
 

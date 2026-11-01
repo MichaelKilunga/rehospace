@@ -396,3 +396,13 @@ body { overflow-x: hidden; }
     .navbar-brand .brand-text { display: none; }   /* icon-only brand so long labels fit */
     .navbar-brand img { height: 44px; }
 }
+
+/* FAQ (agents page) */
+.faq-item { background: #fff; border: 1px solid var(--rs-lilac-2); border-radius: 14px; padding: 1rem 1.25rem; margin-bottom: .75rem; }
+.faq-item summary { cursor: pointer; font-weight: 600; color: var(--rs-ink); list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font-weight: 700; color: var(--rs-violet); }
+.faq-item[open] summary::after { content: "\2212"; }
+.faq-item p { margin: .75rem 0 0; }
+.stat .value.sm { font-size: 1.7rem; white-space: nowrap; }
+@media (max-width: 575px) { .stat .value.sm { font-size: 1.25rem; } }

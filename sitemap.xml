@@ -5,69 +5,83 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://rehospace.com/"/>
     <xhtml:link rel="alternate" hreflang="sw" href="https://rehospace.com/sw/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rehospace.com/"/>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
   </url>
   <url>
     <loc>https://rehospace.com/about</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://rehospace.com/about"/>
     <xhtml:link rel="alternate" hreflang="sw" href="https://rehospace.com/sw/about"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rehospace.com/about"/>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
   </url>
   <url>
     <loc>https://rehospace.com/products</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://rehospace.com/products"/>
     <xhtml:link rel="alternate" hreflang="sw" href="https://rehospace.com/sw/products"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rehospace.com/products"/>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
   </url>
   <url>
     <loc>https://rehospace.com/services</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://rehospace.com/services"/>
     <xhtml:link rel="alternate" hreflang="sw" href="https://rehospace.com/sw/services"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rehospace.com/services"/>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
+  </url>
+  <url>
+    <loc>https://rehospace.com/agents</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rehospace.com/agents"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://rehospace.com/sw/agents"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rehospace.com/agents"/>
+    <lastmod>2026-11-01</lastmod>
   </url>
   <url>
     <loc>https://rehospace.com/contact</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://rehospace.com/contact"/>
     <xhtml:link rel="alternate" hreflang="sw" href="https://rehospace.com/sw/contact"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rehospace.com/contact"/>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
   </url>
   <url>
     <loc>https://rehospace.com/sw/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://rehospace.com/"/>
     <xhtml:link rel="alternate" hreflang="sw" href="https://rehospace.com/sw/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rehospace.com/"/>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
   </url>
   <url>
     <loc>https://rehospace.com/sw/about</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://rehospace.com/about"/>
     <xhtml:link rel="alternate" hreflang="sw" href="https://rehospace.com/sw/about"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rehospace.com/about"/>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
   </url>
   <url>
     <loc>https://rehospace.com/sw/products</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://rehospace.com/products"/>
     <xhtml:link rel="alternate" hreflang="sw" href="https://rehospace.com/sw/products"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rehospace.com/products"/>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
   </url>
   <url>
     <loc>https://rehospace.com/sw/services</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://rehospace.com/services"/>
     <xhtml:link rel="alternate" hreflang="sw" href="https://rehospace.com/sw/services"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rehospace.com/services"/>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
+  </url>
+  <url>
+    <loc>https://rehospace.com/sw/agents</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rehospace.com/agents"/>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://rehospace.com/sw/agents"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rehospace.com/agents"/>
+    <lastmod>2026-11-01</lastmod>
   </url>
   <url>
     <loc>https://rehospace.com/sw/contact</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://rehospace.com/contact"/>
     <xhtml:link rel="alternate" hreflang="sw" href="https://rehospace.com/sw/contact"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rehospace.com/contact"/>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-11-01</lastmod>
   </url>
 </urlset>
