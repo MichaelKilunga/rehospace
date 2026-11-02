@@ -14,6 +14,13 @@ const jobs = [
     ["img/products/daycaremis-logo.png", "img/products/daycaremis-logo.webp", 240, 85],
     ["img/products/pillpointone-devices.png", "img/products/pillpointone-devices.webp", 1400, 78],
     ["img/products/daycaremis-poster.png", "img/products/daycaremis-poster.webp", 1000, 78],
+    // Real product screens (demo data), shown in browser and phone frames. The PNGs are not deployed.
+    ["img/screens/pp-dashboard.png", "img/screens/pp-dashboard.webp", 1280, 76],
+    ["img/screens/pp-pos.png", "img/screens/pp-pos.webp", 1280, 76],
+    ["img/screens/pp-expiry.png", "img/screens/pp-expiry.webp", 1280, 76],
+    ["img/screens/pp-agent.png", "img/screens/pp-agent.webp", 480, 78],
+    ["img/screens/dc-dashboard.png", "img/screens/dc-dashboard.webp", 1280, 76],
+    ["img/screens/ps-dashboard.png", "img/screens/ps-dashboard.webp", 1280, 76],
 ];
 
 await mkdir("img/products", { recursive: true });

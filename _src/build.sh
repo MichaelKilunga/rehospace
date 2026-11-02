@@ -32,12 +32,12 @@ function rep(s, pat, val,    i, out) {
 # Fresh dist/ with only what the public site needs. Empty it rather than delete it,
 # because a running `wrangler dev` keeps the folder open and Windows refuses the delete.
 mkdir -p "$DIST"; find "$DIST" -mindepth 1 -delete; mkdir -p "$DIST/sw" "$ROOT/sw"
-cp -r "$ROOT/css" "$ROOT/js" "$ROOT/lib" "$ROOT/img" "$DIST/"
+cp -r "$ROOT/css" "$ROOT/js" "$ROOT/lib" "$ROOT/img" "$ROOT/video" "$DIST/"
 cp "$ROOT/robots.txt" "$DIST/"
 cp "$ROOT/_src/static/_headers" "$ROOT/_src/static/_redirects" "$ROOT/_src/static/site.webmanifest" "$ROOT/_src/static/llms.txt" "$DIST/"
 cp "$ROOT/img/icons/favicon.ico" "$DIST/favicon.ico"
 # Large source images are only inputs for _src/optimize-images.mjs; the site uses the WebP versions
-rm -f "$DIST/img/products/pillpointone-devices.png" "$DIST/img/products/daycaremis-poster.png"
+rm -f "$DIST/img/products/pillpointone-devices.png" "$DIST/img/products/daycaremis-poster.png" "$DIST"/img/screens/*.png
 
 SITEMAP_ENTRIES=""
 sitemap_url() {   # $1 = loc, $2 = clean path (for alternates), $3 = lastmod

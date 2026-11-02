@@ -76,6 +76,50 @@
         }
     }
 
+    // Short product clips: play while on screen and pause when scrolled away. Visitors who
+    // asked for reduced motion or data saving see the still frame until they tap play.
+    var sw = (document.documentElement.lang || "en").toLowerCase() === "sw";
+    var clips = document.querySelectorAll(".clip video");
+    var calm = (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) ||
+        !!(navigator.connection && navigator.connection.saveData);
+    function play(video) { var p = video.play(); if (p && p.catch) { p.catch(function () {}); } }
+    clips.forEach(function (video) {
+        var box = video.parentNode;
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "clip-btn";
+        btn.setAttribute("aria-label", (sw ? "Cheza au simamisha video: " : "Play or pause video: ") + (video.getAttribute("aria-label") || ""));
+        box.appendChild(btn);
+        btn.addEventListener("click", function () {
+            if (video.paused) { video.userPaused = false; play(video); } else { video.userPaused = true; video.pause(); }
+        });
+        video.addEventListener("play", function () { box.classList.add("is-playing"); });
+        video.addEventListener("pause", function () { box.classList.remove("is-playing"); });
+    });
+    if (clips.length && !calm && "IntersectionObserver" in window) {
+        var clipObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) { if (!entry.target.userPaused) { play(entry.target); } } else { entry.target.pause(); }
+            });
+        }, { threshold: 0.5 });
+        clips.forEach(function (video) { clipObserver.observe(video); });
+    }
+
+    // A one-time nudge next to the WhatsApp button, after the visitor has spent a moment on the site
+    var hint = document.querySelector(".wa-hint");
+    function hintSeen(set) {
+        try { if (set) { sessionStorage.setItem("waHint", "1"); } return sessionStorage.getItem("waHint") === "1"; } catch (e) { return set; }
+    }
+    if (hint && !hintSeen(false)) {
+        setTimeout(function () {
+            if (hintSeen(false)) { return; }
+            hint.hidden = false;
+            hintSeen(true);
+            setTimeout(function () { hint.hidden = true; }, 12000);
+        }, 20000);
+        hint.querySelector("button").addEventListener("click", function () { hint.hidden = true; hintSeen(true); });
+    }
+
     // Current year in footer
     document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
@@ -85,7 +129,6 @@
         var WA_NUMBER = "255745814072";
         var EMAIL = "info@rehospace.com";
 
-        var sw = (document.documentElement.lang || "en").toLowerCase() === "sw";
         var L = sw
             ? { hello: "Habari RehoSpace,", name: "Jina", phone: "Simu", business: "Aina ya biashara", interest: "Ninavutiwa na", subject: "Ujumbe kutoka tovuti: " }
             : { hello: "Hello RehoSpace,", name: "Name", phone: "Phone", business: "Business type", interest: "Interested in", subject: "Website enquiry from " };
