@@ -142,34 +142,8 @@ section { position: relative; }
 .hero-points { list-style: none; padding: 0; margin: 1.5rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; color: rgba(255,255,255,.85); font-size: .95rem; }
 .hero-points li i { color: #5CE09B; margin-right: .4rem; }
 
-/* floating product cards */
-.hero-visual { position: relative; min-height: 420px; }
-.float-card {
-    position: absolute; background: #fff; color: var(--rs-ink); border-radius: 16px; padding: 1rem 1.1rem;
-    box-shadow: var(--rs-shadow-lg); display: flex; align-items: center; gap: .9rem; width: 280px;
-    animation: floatY 6s ease-in-out infinite;
-}
-.float-card img { width: 46px; height: 46px; object-fit: contain; border-radius: 10px; background: #fff; }
-.float-card strong { display: block; font-family: "Poppins", sans-serif; font-size: .98rem; }
-.float-card span { font-size: .8rem; color: var(--rs-muted); }
-.float-card .live { font-size: .7rem; font-weight: 700; color: var(--rs-success); background: rgba(31,169,113,.12); border-radius: 999px; padding: .15rem .5rem; margin-left: auto; white-space: nowrap; }
-.float-card.c1 { top: 8%; left: 6%; animation-delay: 0s; }
-.float-card.c2 { top: 38%; right: 2%; animation-delay: 1.2s; }
-.float-card.c3 { bottom: 6%; left: 14%; animation-delay: 2.4s; }
-.hero-orb { position: absolute; width: 320px; height: 320px; border-radius: 50%; left: 50%; top: 50%; transform: translate(-50%, -50%); background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), rgba(255,255,255,.04) 60%, transparent 70%); border: 1px solid rgba(255,255,255,.18); }
-.hero-orb::after { content: ""; position: absolute; inset: 40px; border-radius: 50%; border: 1px dashed rgba(255,255,255,.25); }
-@keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
 @media (max-width: 991.98px) {
     .hero { padding: 4rem 0 6rem; }
-    .hero-visual { min-height: 360px; margin-top: 2rem; }
-    .float-card { width: 250px; }
-}
-@media (max-width: 575.98px) {
-    .hero-visual { min-height: 330px; }
-    .float-card { width: 230px; padding: .8rem; }
-    .float-card.c1 { left: 0; }
-    .float-card.c2 { right: 0; }
-    .float-card.c3 { left: 4%; }
 }
 
 /* --------------------------------------------------------------------------
@@ -230,19 +204,6 @@ section { position: relative; }
 .check-list li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; top: .1rem; width: 22px; height: 22px; border-radius: 50%; background: var(--rs-lilac); color: var(--rs-violet); font-size: .7rem; display: flex; align-items: center; justify-content: center; }
 .check-list.on-dark li::before { background: rgba(255,255,255,.15); color: #fff; }
 
-.principle { display: flex; gap: 1rem; align-items: flex-start; }
-.principle .ico { flex: 0 0 48px; width: 48px; height: 48px; border-radius: 12px; background: var(--rs-lilac); color: var(--rs-purple); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
-.principle h5 { font-size: 1.02rem; margin-bottom: .25rem; }
-.principle p { margin: 0; font-size: .93rem; }
-
-/* --------------------------------------------------------------------------
-   Industries
-   -------------------------------------------------------------------------- */
-.industry-tile { background: #fff; border: 1px solid var(--rs-lilac-2); border-radius: 14px; padding: 1.25rem 1rem; text-align: center; height: 100%; transition: all .3s ease; }
-.industry-tile:hover { border-color: var(--rs-violet); transform: translateY(-4px); box-shadow: var(--rs-shadow); }
-.industry-tile i { font-size: 1.6rem; color: var(--rs-violet); margin-bottom: .6rem; display: block; }
-.industry-tile span { font-family: "Poppins", sans-serif; font-weight: 600; font-size: .92rem; color: var(--rs-ink); }
-
 /* --------------------------------------------------------------------------
    Why / value props
    -------------------------------------------------------------------------- */
@@ -287,8 +248,6 @@ section { position: relative; }
 .product-detail { scroll-margin-top: 110px; }
 .product-detail .product-logo { height: 64px; width: auto; object-fit: contain; }
 .product-shot { border-radius: var(--rs-radius); box-shadow: var(--rs-shadow-lg); }
-.product-placeholder { border-radius: var(--rs-radius); background: linear-gradient(135deg, var(--rs-lilac), #fff); border: 1px dashed var(--rs-lilac-2); min-height: 280px; display: flex; align-items: center; justify-content: center; flex-direction: column; color: var(--rs-muted); text-align: center; padding: 2rem; }
-.product-placeholder i { font-size: 3rem; color: var(--rs-violet-soft); margin-bottom: 1rem; }
 
 .plan { background: #fff; border: 1px solid var(--rs-lilac-2); border-radius: 16px; padding: 1.4rem 1.3rem; height: 100%; transition: all .3s ease; }
 .plan:hover { border-color: var(--rs-violet); box-shadow: var(--rs-shadow); }
@@ -481,9 +440,11 @@ body { overflow-x: hidden; }
 a.mini-tile:hover { border-color: var(--rs-violet); color: var(--rs-ink); transform: translateY(-3px); box-shadow: var(--rs-shadow); }
 .mini-tile .ico { flex: 0 0 44px; width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, var(--rs-purple), var(--rs-violet)); color: #fff; display: flex; align-items: center; justify-content: center; }
 .mini-tile strong { display: block; font-family: "Poppins", sans-serif; font-size: .98rem; line-height: 1.3; color: var(--rs-ink); }
-.mini-tile span { display: block; font-size: .85rem; color: var(--rs-muted); line-height: 1.4; }
+.mini-tile > span:last-child > span { display: block; font-size: .85rem; color: var(--rs-muted); line-height: 1.4; }
+.plan .plan-price small { white-space: nowrap; }
+.plans-tight .plan-price { font-size: 1.2rem; }
 .mini-tile.keep-text { align-items: flex-start; }
-.mini-tile.keep-text span { font-size: .9rem; color: var(--rs-text); margin-top: .2rem; }
+.mini-tile.keep-text > span:last-child > span { font-size: .9rem; color: var(--rs-text); margin-top: .2rem; }
 @media (max-width: 575.98px) {   /* two small tiles per row on phones: icon and title only */
     .mini-tile:not(.keep-text) { flex-direction: column; text-align: center; gap: .5rem; padding: .9rem .5rem; }
     .mini-tile:not(.keep-text) strong { font-size: .88rem; }

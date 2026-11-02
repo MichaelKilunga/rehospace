@@ -15,7 +15,8 @@ _src/build.sh             assembles pages, writes sitemap.xml, stages dist/
 _src/optimize-images.mjs  creates WebP versions, the 1200x630 share image and the favicons (node, uses sharp)
 css/style.css             all site styling (brand tokens at the top)
 js/main.js                spinner, sticky header, counters, nav highlight, bilingual contact form
-img/                      brand assets, img/products/ (logos, screenshots, WebP derivatives), img/icons/ (favicons)
+img/                      brand assets, img/products/ (logos, WebP derivatives), img/screens/ (real product screens), img/icons/ (favicons)
+video/                    short silent product clips (MP4) with a WebP still frame each
 dist/                     deploy folder (generated, ignored by git)
 wrangler.toml             Cloudflare Workers config (custom domains rehospace.com + www)
 ```
@@ -37,6 +38,19 @@ Keep both languages in sync: every English page has a Swahili twin with the same
 ## Images
 
 Put originals in `img/` or `img/products/`, add a line to `_src/optimize-images.mjs`, then run `node _src/optimize-images.mjs`. Reference the `.webp` output in pages with `{{BASE}}img/...` (the build turns `{{BASE}}` into `../` for Swahili pages).
+
+Product screenshots in `img/screens/` come from the system profiles on the company drive (`MARKETING\<PRODUCT>\System Profile Source\img`) and show demo data. The PNGs stay in git as sources; only the WebP versions are deployed. Use real screens and real photos, never AI-generated pictures of people.
+
+## Video
+
+The clips in `video/` are the November 2026 social media clips (`MARKETING\...\Social Media - Novemba 2026`), re-encoded for the web: 540x960, H.264, no audio, about 300 KB each. Each has a `.webp` still frame used as the poster:
+
+```
+ffmpeg -i source.mp4 -an -vf scale=540:960 -c:v libx264 -profile:v main -pix_fmt yuv420p -preset slow -crf 30 -movflags +faststart video/name.mp4
+ffmpeg -ss 5 -i video/name.mp4 -frames:v 1 -c:v libwebp -quality 72 video/name.webp
+```
+
+Use them in pages as `<div class="clip"><video muted loop playsinline preload="none" poster="{{BASE}}video/name.webp" aria-label="What the clip shows"><source src="{{BASE}}video/name.mp4" type="video/mp4"></video></div>`. `js/main.js` adds the play/pause button, plays a clip only while it is on screen, and never autoplays for visitors with reduced motion or data saver on.
 
 ## SEO
 
