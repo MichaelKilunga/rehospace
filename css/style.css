@@ -429,6 +429,20 @@ body { overflow-x: hidden; }
 .receipt .r-total { border-top: 1px dashed #aaa; margin-top: .45rem; padding-top: .45rem; font-weight: 700; font-size: .82rem; }
 .receipt .r-foot { text-align: center; margin-top: .6rem; border-top: 1px dashed #aaa; padding-top: .45rem; color: #555; }
 
+/* Before / after: what changes for the customer */
+.compare-card { border-radius: var(--rs-radius); padding: 1.6rem 1.75rem; height: 100%; }
+.compare-card h3 { font-size: 1.15rem; margin-bottom: .75rem; }
+.compare-card ul { list-style: none; padding: 0; margin: 0; }
+.compare-card li { display: flex; gap: .75rem; align-items: center; padding: .65rem 0; border-bottom: 1px dashed var(--rs-lilac-2); font-weight: 600; }
+.compare-card li:last-child { border-bottom: 0; }
+.compare-card li i { flex: 0 0 28px; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .78rem; }
+.compare-card.before { background: #fff; border: 1px solid var(--rs-lilac-2); color: var(--rs-muted); }
+.compare-card.before li i { background: #FDECEC; color: #D64545; }
+.compare-card.after { background: linear-gradient(135deg, var(--rs-purple), var(--rs-violet)); color: #fff; box-shadow: var(--rs-shadow-lg); }
+.compare-card.after h3 { color: #fff; }
+.compare-card.after li { border-color: rgba(255,255,255,.2); }
+.compare-card.after li i { background: #5CE09B; color: var(--rs-purple-dark); }
+
 /* "Coming soon" products, kept short */
 .soon-card { background: #fff; border: 1px dashed var(--rs-violet-soft); border-radius: var(--rs-radius); padding: 1.5rem; height: 100%; display: flex; gap: 1rem; align-items: flex-start; }
 .soon-card .ico { flex: 0 0 52px; width: 52px; height: 52px; border-radius: 14px; background: var(--rs-lilac); color: var(--rs-violet); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }

@@ -66,6 +66,8 @@ Each page targets one main search phrase, used in its title (in `_src/build.sh`)
 | Products | pharmacy, POS, daycare and bulk SMS software in Tanzania | mfumo wa duka la dawa, POS, daycare na SMS |
 | Agents | PillPointOne agent, monthly commission | wakala wa PillPointOne |
 
+The home page keeps its search phrase in the title, meta description and footer only, so the hero can speak to customers ("Your business, in your pocket"). Keep copy about what the customer gets; the story behind the company name is internal and stays off the site.
+
 The FAQ sections on services, careers and agents are repeated as FAQPage JSON-LD at the bottom of each page body. Change both together.
 
 `<lastmod>` in the sitemap is the last commit date of each page body, so commit content changes before deploying.

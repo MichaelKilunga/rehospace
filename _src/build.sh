@@ -94,7 +94,7 @@ build() {   # build <lang> <page> <title> <description>
 build en index.html    "Software Development Company in Tanzania | RehoSpace Enterprise" \
     "RehoSpace Enterprise is a software development company in Morogoro, Tanzania, building custom software, web and mobile apps and business systems, and training young developers across Africa."
 build en about.html    "About RehoSpace Enterprise | Software Company in Morogoro, Tanzania" \
-    "RehoSpace Enterprise is a Tanzanian software company based in Morogoro. Our story, vision and values, and how we build products, train young developers and create jobs."
+    "Software that helps Tanzanian businesses sell more and lose less: pharmacy, shop, daycare and bulk SMS systems from RehoSpace Enterprise in Morogoro."
 build en products.html "Pharmacy, POS, Daycare & Bulk SMS Software in Tanzania | RehoSpace" \
     "Business software made in Tanzania: PillPointOne pharmacy management system, DaycareMIS daycare software, RehoPOS point of sale, PushSMS bulk SMS, RehoCare and a Real Estate Platform. Plans from TZS 10,000 per month."
 build en services.html "Software Development Services in Tanzania | RehoSpace" \
@@ -112,7 +112,7 @@ build en 404.html      "Page Not Found | RehoSpace Enterprise" \
 build sw index.html    "Kampuni ya Kutengeneza Software na Mifumo Tanzania | RehoSpace" \
     "RehoSpace Enterprise ni kampuni ya kutengeneza software na mifumo ya biashara iliyopo Morogoro, Tanzania: programu maalum, apps za wavuti na simu, PillPointOne, RehoPOS na zaidi. Pia tunawafundisha vijana software development."
 build sw about.html    "Kuhusu RehoSpace Enterprise | Kampuni ya Software Morogoro, Tanzania" \
-    "RehoSpace Enterprise ni kampuni ya software ya Kitanzania iliyopo Morogoro. Historia yetu, dira na maadili, na jinsi tunavyotengeneza bidhaa, kuwafundisha vijana na kutengeneza ajira."
+    "Software inayosaidia biashara za Tanzania kuuza zaidi na kupoteza kidogo: mifumo ya duka la dawa, maduka, daycare na SMS kwa wingi kutoka RehoSpace Enterprise, Morogoro."
 build sw products.html "Mifumo ya Duka la Dawa, POS, Daycare na SMS Tanzania | RehoSpace" \
     "Software za biashara zilizotengenezwa Tanzania: PillPointOne mfumo wa duka la dawa, DaycareMIS mfumo wa daycare, RehoPOS mfumo wa mauzo, PushSMS kwa wingi, RehoCare na Jukwaa la Majengo na Viwanja. Vifurushi kuanzia TZS 10,000 kwa mwezi."
 build sw services.html "Huduma za Kutengeneza Software na Mifumo Tanzania | RehoSpace" \
