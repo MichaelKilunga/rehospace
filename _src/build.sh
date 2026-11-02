@@ -8,6 +8,10 @@ P="$ROOT/_src/partials"
 SITE="https://rehospace.com"
 TODAY="$(date +%Y-%m-%d)"
 DIST="$ROOT/dist"
+# Browsers keep css/ and js/ for a week (see _headers), so the links carry a hash of the file:
+# any edit changes the URL and every visitor fetches the new version at once
+CSS_V="$(md5sum "$ROOT/css/style.css" | cut -c1-8)"
+JS_V="$(md5sum "$ROOT/js/main.js" | cut -c1-8)"
 
 # Literal (non-regex) placeholder replacement so titles may contain |, &, . etc.
 AWK_REPLACE='
@@ -26,6 +30,8 @@ function rep(s, pat, val,    i, out) {
     line = rep(line, "{{SW_URL}}", sw_url)
     line = rep(line, "{{ALT_URL}}", alt_url)
     line = rep(line, "{{BASE}}", base)
+    line = rep(line, "{{CSS_V}}", css_v)
+    line = rep(line, "{{JS_V}}", js_v)
     if (index(line, "{{MOUNTAINS}}") > 0) { print svg } else { print line }
 }'
 
@@ -76,7 +82,7 @@ build() {   # build <lang> <page> <title> <description>
 
     cat "$P/$lang/head.html" "$src" "$P/$lang/footer.html" \
         | awk -v title="$title" -v desc="$desc" -v page="$page" -v canon_url="$canon_url" \
-              -v en_url="$en_url" -v sw_url="$sw_url" -v alt_url="$alt_url" -v base="$base" -v svg="$svg" \
+              -v en_url="$en_url" -v sw_url="$sw_url" -v alt_url="$alt_url" -v base="$base" -v svg="$svg" -v css_v="$CSS_V" -v js_v="$JS_V" \
               "$AWK_REPLACE" > "$out"
 
     if [ "$page" = "404.html" ]; then

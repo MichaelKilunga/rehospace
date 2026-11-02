@@ -33,6 +33,8 @@ npm run preview    # local server via wrangler dev
 npm run deploy     # build + wrangler deploy (needs: npx wrangler login)
 ```
 
+Browsers keep `css/` and `js/` for a week, so the build links them as `style.css?v=<hash>` and `main.js?v=<hash>` (the `{{CSS_V}}` and `{{JS_V}}` placeholders in the partials). Any change to those files gives them a new URL, and visitors get it on their next page load. Keep the placeholders when editing the partials.
+
 Keep both languages in sync: every English page has a Swahili twin with the same file name, which the build links through `hreflang` tags, the language switch and the sitemap.
 
 ## Images
