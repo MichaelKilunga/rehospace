@@ -134,7 +134,7 @@ section { position: relative; }
     background-size: 26px 26px;
 }
 .hero .hero-mountains { position: absolute; left: 0; right: 0; bottom: -2px; width: 100%; height: auto; pointer-events: none; }
-.hero h1 { color: #fff; font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 700; letter-spacing: -.5px; }
+.hero h1 { color: #fff; font-size: clamp(2rem, 3.4vw, 2.8rem); font-weight: 700; letter-spacing: -.5px; }
 .hero h1 .accent { color: #D9C8FF; }
 .hero p.lead { color: rgba(255,255,255,.85); max-width: 580px; }
 .hero-eyebrow { display: inline-flex; align-items: center; gap: .5rem; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); border-radius: 999px; padding: .4rem 1rem; font-size: .85rem; font-weight: 600; letter-spacing: .3px; color: #fff; }
@@ -145,6 +145,21 @@ section { position: relative; }
 @media (max-width: 991.98px) {
     .hero { padding: 4rem 0 6rem; }
 }
+
+/* Two ways in from the home hero: subscribe to a ready-made system, or order custom software */
+.hero-paths { display: grid; gap: .75rem; max-width: 560px; }
+.path-card { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.1rem; border-radius: 16px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25); color: #fff; transition: all .25s ease; }
+.path-card:hover, .path-card:focus-visible { background: #fff; color: var(--rs-ink); transform: translateY(-2px); box-shadow: var(--rs-shadow-lg); }
+.path-card .ico { flex: 0 0 50px; height: 50px; border-radius: 14px; background: #fff; color: var(--rs-purple); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; transition: all .25s ease; }
+.path-card:hover .ico, .path-card:focus-visible .ico { background: var(--rs-purple); color: #fff; }
+.path-card strong { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; font-family: "Poppins", sans-serif; font-size: 1.08rem; line-height: 1.3; }
+.path-card .tag { font-family: "Inter", sans-serif; font-style: normal; font-size: .68rem; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; background: #5CE09B; color: var(--rs-purple-dark); border-radius: 999px; padding: .15rem .55rem; }
+.path-card .tag.alt { background: #FFD166; }
+.path-card .txt > span { display: block; font-size: .88rem; opacity: .85; margin-top: .15rem; }
+.path-card .go { margin-left: auto; transition: transform .25s ease; }
+.path-card:hover .go, .path-card:focus-visible .go { transform: translateX(4px); color: var(--rs-violet); }
+.hero-note { margin: 1rem 0 0; font-size: .92rem; color: rgba(255,255,255,.75); }
+.hero-note a { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 
 /* --------------------------------------------------------------------------
    Sections
